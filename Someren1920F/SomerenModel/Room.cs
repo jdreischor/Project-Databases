@@ -12,5 +12,9 @@ namespace SomerenModel
         public int Capacity { get; set;  } // number of beds, either 4,6,8,12 or 16
         public bool Type { get; set; } // student = false, teacher = true
 
+        public void Add(object room)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -96,9 +96,45 @@ namespace SomerenUI
             showPanel("Students");
         }
 
+
+       // Show the teachers
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            showPanel("Lecturers");
+            showPanel("Students");
+            lbl_Students.Text = ("Lecturers");
+            listViewStudents.Clear();
+
+
+            SomerenLogic.Lecturer_Service lecturerService = new SomerenLogic.Lecturer_Service();
+            List<Teacher> lecturerList =lecturerService.GetTeachers();
+
+            foreach (SomerenModel.Teacher t in lecturerList)
+            {
+
+                ListViewItem li = new ListViewItem(t.Name);
+                listViewStudents.Items.Add(li);
+            }
+
+
+        }
+
+        // Show the rooms
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Students");
+            lbl_Students.Text = ("Rooms");
+            listViewStudents.Clear();
+
+            SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
+            List<Room> roomList = roomService.GetRooms();
+
+            foreach (SomerenModel.Room r in roomList)
+            {
+
+                ListViewItem li = new ListViewItem(r.Number.ToString());
+                listViewStudents.Items.Add(li);
+            }
+
         }
     }
 }
