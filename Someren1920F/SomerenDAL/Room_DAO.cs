@@ -28,6 +28,7 @@ namespace SomerenDAL
                 {
                     Number = (int)dr["kamernummer"],
                     Capacity = (int)dr["bedden"]
+                    
                 };
                 rooms.Add(room);
             }

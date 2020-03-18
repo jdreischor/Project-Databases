@@ -28,8 +28,10 @@ namespace SomerenDAL
             {
                 Student student = new Student()
                 {
+
                     Number = (int)dr["studentnummer"],
-                    Name = (String)(dr["voornaam"].ToString())
+                    Name = (String)(dr["voornaam"].ToString()) + " " + 
+                    (String)dr["achternaam"].ToString()
                 };
                 students.Add(student);
             }

@@ -48,6 +48,8 @@
             this.studentDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
+            this.btn_Stock = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_CashRegister = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
@@ -72,7 +74,9 @@
             this.studentsToolStripMenuItem,
             this.lecturersToolStripMenuItem,
             this.activitiesToolStripMenuItem,
-            this.roomsToolStripMenuItem});
+            this.roomsToolStripMenuItem,
+            this.btn_Stock,
+            this.btn_CashRegister});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -94,19 +98,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -211,6 +215,18 @@
             this.lbl_Students.TabIndex = 3;
             this.lbl_Students.Text = "Students";
             // 
+            // btn_Stock
+            // 
+            this.btn_Stock.Name = "btn_Stock";
+            this.btn_Stock.Size = new System.Drawing.Size(59, 24);
+            this.btn_Stock.Text = "Stock";
+            // 
+            // btn_CashRegister
+            // 
+            this.btn_CashRegister.Name = "btn_CashRegister";
+            this.btn_CashRegister.Size = new System.Drawing.Size(112, 24);
+            this.btn_CashRegister.Text = "Cash Register";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +275,8 @@
         private System.Windows.Forms.ColumnHeader studentID;
         private System.Windows.Forms.ColumnHeader studentName;
         private System.Windows.Forms.ColumnHeader studentDOB;
+        private System.Windows.Forms.ToolStripMenuItem btn_Stock;
+        private System.Windows.Forms.ToolStripMenuItem btn_CashRegister;
     }
 }
 

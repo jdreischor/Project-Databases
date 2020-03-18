@@ -104,9 +104,8 @@ namespace SomerenUI
             lbl_Students.Text = ("Lecturers");
             listViewStudents.Clear();
 
-
             SomerenLogic.Lecturer_Service lecturerService = new SomerenLogic.Lecturer_Service();
-            List<Teacher> lecturerList =lecturerService.GetTeachers();
+            List<Teacher> lecturerList = lecturerService.GetTeachers();
 
             foreach (SomerenModel.Teacher t in lecturerList)
             {
