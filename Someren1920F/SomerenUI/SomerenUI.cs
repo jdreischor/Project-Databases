@@ -33,6 +33,7 @@ namespace SomerenUI
 
                 // hide all other panels
                 pnl_Students.Hide();
+                pnl_CashRegister.Hide();
 
                 // show dashboard
                 pnl_Dashboard.Show();
@@ -43,6 +44,8 @@ namespace SomerenUI
                 // hide all other panels
                 pnl_Dashboard.Hide();
                 img_Dashboard.Hide();
+                pnl_CashRegister.Hide();
+               
 
                 // show students
                 pnl_Students.Show();
@@ -55,13 +58,51 @@ namespace SomerenUI
 
                 // clear the listview before filling it again
                 listViewStudents.Clear();
+                
+                // TODO: Listview Aanpassen
 
                 foreach (SomerenModel.Student s in studentList)
                 {
 
                     ListViewItem li = new ListViewItem(s.Name);
                     listViewStudents.Items.Add(li);
+
                 }
+            } else if(panelName == "Cash Register")
+            {
+                // hide all other panels
+                pnl_Dashboard.Hide();
+                img_Dashboard.Hide();
+                //pnl_Students.Hide();
+
+
+                // show students
+                pnl_CashRegister.Show();
+                //pnl_Students.Show();
+
+                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+                List<Student> studentList = studService.GetStudents();
+
+                lv_RegisterStudent.Clear();
+                lv_RegisterDrank.Clear();
+
+                foreach (SomerenModel.Student s in studentList)
+                {
+                    ListViewItem li = new ListViewItem(s.Name);
+
+                    lv_RegisterStudent.Items.Add(li);
+                }
+
+                SomerenLogic.Voorraad_Service stockService = new SomerenLogic.Voorraad_Service();
+                List<Voorraad> stockList = stockService.GetVoorraad();
+
+                foreach (SomerenModel.Voorraad v in stockList)
+                {
+                    ListViewItem li = new ListViewItem(v.Name);
+                    lv_RegisterDrank.Items.Add(li);
+                }
+
+              
             }
            
         }
@@ -94,6 +135,7 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Students");
+            lbl_Students.Text = "Students";
         }
 
 
@@ -129,11 +171,16 @@ namespace SomerenUI
 
             foreach (SomerenModel.Room r in roomList)
             {
-
                 ListViewItem li = new ListViewItem(r.Number.ToString());
                 listViewStudents.Items.Add(li);
             }
 
+        }
+
+        private void btn_CashRegister_Click(object sender, EventArgs e)
+        {
+            showPanel("Cash Register");
+            lbl_Students.Text = "Cash Register";
         }
     }
 }

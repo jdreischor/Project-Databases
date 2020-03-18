@@ -39,21 +39,29 @@
             this.lecturersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Stock = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_CashRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.pnl_Students = new System.Windows.Forms.Panel();
+            this.pnl_CashRegister = new System.Windows.Forms.Panel();
+            this.lbl_RegisterDrank = new System.Windows.Forms.Label();
+            this.lbl_CashStudent = new System.Windows.Forms.Label();
+            this.lv_RegisterDrank = new System.Windows.Forms.ListView();
+            this.lv_RegisterStudent = new System.Windows.Forms.ListView();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Students = new System.Windows.Forms.Label();
-            this.btn_Stock = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_CashRegister = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Pay = new System.Windows.Forms.Button();
+            this.lblShowStdName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             this.pnl_Students.SuspendLayout();
+            this.pnl_CashRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,19 +106,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(165, 26);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -141,6 +149,19 @@
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
+            // btn_Stock
+            // 
+            this.btn_Stock.Name = "btn_Stock";
+            this.btn_Stock.Size = new System.Drawing.Size(59, 24);
+            this.btn_Stock.Text = "Stock";
+            // 
+            // btn_CashRegister
+            // 
+            this.btn_CashRegister.Name = "btn_CashRegister";
+            this.btn_CashRegister.Size = new System.Drawing.Size(112, 24);
+            this.btn_CashRegister.Text = "Cash Register";
+            this.btn_CashRegister.Click += new System.EventHandler(this.btn_CashRegister_Click);
+            // 
             // pnl_Dashboard
             // 
             this.pnl_Dashboard.Controls.Add(this.lbl_Dashboard);
@@ -162,6 +183,7 @@
             // 
             // pnl_Students
             // 
+            this.pnl_Students.Controls.Add(this.pnl_CashRegister);
             this.pnl_Students.Controls.Add(this.listViewStudents);
             this.pnl_Students.Controls.Add(this.pictureBox1);
             this.pnl_Students.Controls.Add(this.lbl_Students);
@@ -170,6 +192,65 @@
             this.pnl_Students.Size = new System.Drawing.Size(938, 466);
             this.pnl_Students.TabIndex = 4;
             // 
+            // pnl_CashRegister
+            // 
+            this.pnl_CashRegister.Controls.Add(this.lblShowStdName);
+            this.pnl_CashRegister.Controls.Add(this.btn_Pay);
+            this.pnl_CashRegister.Controls.Add(this.lbl_RegisterDrank);
+            this.pnl_CashRegister.Controls.Add(this.lbl_CashStudent);
+            this.pnl_CashRegister.Controls.Add(this.lv_RegisterDrank);
+            this.pnl_CashRegister.Controls.Add(this.lv_RegisterStudent);
+            this.pnl_CashRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_CashRegister.Location = new System.Drawing.Point(0, 0);
+            this.pnl_CashRegister.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_CashRegister.Name = "pnl_CashRegister";
+            this.pnl_CashRegister.Size = new System.Drawing.Size(938, 466);
+            this.pnl_CashRegister.TabIndex = 6;
+            // 
+            // lbl_RegisterDrank
+            // 
+            this.lbl_RegisterDrank.AutoSize = true;
+            this.lbl_RegisterDrank.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RegisterDrank.Location = new System.Drawing.Point(489, 16);
+            this.lbl_RegisterDrank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_RegisterDrank.Name = "lbl_RegisterDrank";
+            this.lbl_RegisterDrank.Size = new System.Drawing.Size(105, 38);
+            this.lbl_RegisterDrank.TabIndex = 3;
+            this.lbl_RegisterDrank.Text = "Drank";
+            // 
+            // lbl_CashStudent
+            // 
+            this.lbl_CashStudent.AutoSize = true;
+            this.lbl_CashStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CashStudent.Location = new System.Drawing.Point(83, 16);
+            this.lbl_CashStudent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_CashStudent.Name = "lbl_CashStudent";
+            this.lbl_CashStudent.Size = new System.Drawing.Size(129, 38);
+            this.lbl_CashStudent.TabIndex = 2;
+            this.lbl_CashStudent.Text = "Student";
+            // 
+            // lv_RegisterDrank
+            // 
+            this.lv_RegisterDrank.HideSelection = false;
+            this.lv_RegisterDrank.Location = new System.Drawing.Point(399, 56);
+            this.lv_RegisterDrank.Margin = new System.Windows.Forms.Padding(2);
+            this.lv_RegisterDrank.Name = "lv_RegisterDrank";
+            this.lv_RegisterDrank.Size = new System.Drawing.Size(276, 416);
+            this.lv_RegisterDrank.TabIndex = 1;
+            this.lv_RegisterDrank.UseCompatibleStateImageBehavior = false;
+            this.lv_RegisterDrank.View = System.Windows.Forms.View.List;
+            // 
+            // lv_RegisterStudent
+            // 
+            this.lv_RegisterStudent.HideSelection = false;
+            this.lv_RegisterStudent.Location = new System.Drawing.Point(14, 56);
+            this.lv_RegisterStudent.Margin = new System.Windows.Forms.Padding(2);
+            this.lv_RegisterStudent.Name = "lv_RegisterStudent";
+            this.lv_RegisterStudent.Size = new System.Drawing.Size(276, 416);
+            this.lv_RegisterStudent.TabIndex = 0;
+            this.lv_RegisterStudent.UseCompatibleStateImageBehavior = false;
+            this.lv_RegisterStudent.View = System.Windows.Forms.View.List;
+            // 
             // listViewStudents
             // 
             this.listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -177,23 +258,27 @@
             this.studentName,
             this.studentDOB});
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(16, 42);
+            this.listViewStudents.Location = new System.Drawing.Point(14, 40);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(766, 307);
             this.listViewStudents.TabIndex = 5;
             this.listViewStudents.UseCompatibleStateImageBehavior = false;
+            this.listViewStudents.View = System.Windows.Forms.View.List;
             // 
             // studentID
             // 
             this.studentID.Text = "ID";
+            this.studentID.Width = 154;
             // 
             // studentName
             // 
             this.studentName.Text = "Name";
+            this.studentName.Width = 154;
             // 
             // studentDOB
             // 
             this.studentDOB.Text = "Date of Birth";
+            this.studentDOB.Width = 163;
             // 
             // pictureBox1
             // 
@@ -215,17 +300,24 @@
             this.lbl_Students.TabIndex = 3;
             this.lbl_Students.Text = "Students";
             // 
-            // btn_Stock
+            // btn_Pay
             // 
-            this.btn_Stock.Name = "btn_Stock";
-            this.btn_Stock.Size = new System.Drawing.Size(59, 24);
-            this.btn_Stock.Text = "Stock";
+            this.btn_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pay.Location = new System.Drawing.Point(703, 377);
+            this.btn_Pay.Name = "btn_Pay";
+            this.btn_Pay.Size = new System.Drawing.Size(220, 64);
+            this.btn_Pay.TabIndex = 4;
+            this.btn_Pay.Text = "Pay";
+            this.btn_Pay.UseVisualStyleBackColor = true;
             // 
-            // btn_CashRegister
+            // lblShowStdName
             // 
-            this.btn_CashRegister.Name = "btn_CashRegister";
-            this.btn_CashRegister.Size = new System.Drawing.Size(112, 24);
-            this.btn_CashRegister.Text = "Cash Register";
+            this.lblShowStdName.AutoSize = true;
+            this.lblShowStdName.Location = new System.Drawing.Point(704, 70);
+            this.lblShowStdName.Name = "lblShowStdName";
+            this.lblShowStdName.Size = new System.Drawing.Size(41, 15);
+            this.lblShowStdName.TabIndex = 5;
+            this.lblShowStdName.Text = "label1";
             // 
             // SomerenUI
             // 
@@ -248,6 +340,8 @@
             this.pnl_Dashboard.PerformLayout();
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
+            this.pnl_CashRegister.ResumeLayout(false);
+            this.pnl_CashRegister.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -272,11 +366,18 @@
         private System.Windows.Forms.Label lbl_Students;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView listViewStudents;
-        private System.Windows.Forms.ColumnHeader studentID;
         private System.Windows.Forms.ColumnHeader studentName;
-        private System.Windows.Forms.ColumnHeader studentDOB;
         private System.Windows.Forms.ToolStripMenuItem btn_Stock;
         private System.Windows.Forms.ToolStripMenuItem btn_CashRegister;
+        private System.Windows.Forms.ColumnHeader studentID;
+        private System.Windows.Forms.ColumnHeader studentDOB;
+        private System.Windows.Forms.Panel pnl_CashRegister;
+        private System.Windows.Forms.ListView lv_RegisterDrank;
+        private System.Windows.Forms.ListView lv_RegisterStudent;
+        private System.Windows.Forms.Label lbl_CashStudent;
+        private System.Windows.Forms.Label lbl_RegisterDrank;
+        private System.Windows.Forms.Label lblShowStdName;
+        private System.Windows.Forms.Button btn_Pay;
     }
 }
 

@@ -31,5 +31,3 @@ D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\obj\Debug\S
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.csproj.CopyComplete
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.dll
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\obj\Debug\SomerenDAL.pdb
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\bin\Debug\SomerenDAL.dll.CodeAnalysisLog.xml
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenDAL\bin\Debug\SomerenDAL.dll.lastcodeanalysissucceeded

@@ -47,5 +47,3 @@ D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\obj\Debug\So
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\obj\Debug\SomerenUI.csproj.CopyComplete
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\obj\Debug\SomerenUI.exe
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\obj\Debug\SomerenUI.pdb
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\bin\Debug\SomerenUI.exe.CodeAnalysisLog.xml
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenUI\bin\Debug\SomerenUI.exe.lastcodeanalysissucceeded

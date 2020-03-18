@@ -38,5 +38,3 @@ D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\obj\Debug
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
 D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll.CodeAnalysisLog.xml
-D:\School\ProjectDatabases\Project-Databases\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll.lastcodeanalysissucceeded

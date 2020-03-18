@@ -27,12 +27,12 @@ namespace SomerenLogic
                 Student a = new Student();
                 a.Name = "Mr. Test Student";
                 a.Number = 474791;
-                a.BirthDate = DateTime.Parse("1990-07-04");
+                //a.BirthDate = DateTime.Parse("1990-07-04");
                 student.Add(a);
                 Student b = new Student();
                 b.Name = "Mrs. Test Student";
                 b.Number = 197474;
-                b.BirthDate = DateTime.Parse("2019-03-04");
+                //b.BirthDate = DateTime.Parse("2019-03-04");
                 student.Add(b);
                 return student;
                 //throw new Exception("Someren couldn't connect to the database");
