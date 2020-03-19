@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SomerenModel
 {
-   public class Voorraad
+   public class Stock
     {
 
         public string Name { get; set; }

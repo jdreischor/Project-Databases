@@ -10,22 +10,22 @@ using SomerenModel;
 
 namespace SomerenDAL
 {
-   public class Voorraad_DAO : Base
+   public class Stock_DAO : Base
     {
-        public List<Voorraad> Db_Get_All_Stock()
+        public List<Stock> Db_Get_All_Stock()
         {
             string query = "SELECT dranknaam, aantal, prijs FROM [Voorraad]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
 
-        private List<Voorraad> ReadTables(DataTable dataTable)
+        private List<Stock> ReadTables(DataTable dataTable)
         {
-            List<Voorraad> voorraden = new List<Voorraad>();
+            List<Stock> voorraden = new List<Stock>();
 
             foreach (DataRow dr in dataTable.Rows)
             {
-                Voorraad voorraad = new Voorraad()
+                Stock voorraad = new Stock()
                 {
                     Name = (string)dr["dranknaam"].ToString(),
                     Amount = (int)dr["aantal"],

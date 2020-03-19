@@ -45,7 +45,7 @@ namespace SomerenUI
                 pnl_Dashboard.Hide();
                 img_Dashboard.Hide();
                 pnl_CashRegister.Hide();
-               
+
 
                 // show students
                 pnl_Students.Show();
@@ -57,8 +57,8 @@ namespace SomerenUI
                 List<Student> studentList = studService.GetStudents();
 
                 // clear the listview before filling it again
-                listViewStudents.Clear();
-                
+                listViewStudents.Items.Clear();
+
                 // TODO: Listview Aanpassen
 
                 foreach (SomerenModel.Student s in studentList)
@@ -68,23 +68,26 @@ namespace SomerenUI
                     listViewStudents.Items.Add(li);
 
                 }
-            } else if(panelName == "Cash Register")
+            }
+            else if (panelName == "Cash Register")
             {
+
                 // hide all other panels
                 pnl_Dashboard.Hide();
                 img_Dashboard.Hide();
                 //pnl_Students.Hide();
 
-
-                // show students
+                // show Cash Register
+                pnl_Students.Show();
                 pnl_CashRegister.Show();
                 //pnl_Students.Show();
 
                 SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
                 List<Student> studentList = studService.GetStudents();
 
+
                 lv_RegisterStudent.Clear();
-                lv_RegisterDrank.Clear();
+                lv_RegisterStock.Clear();
 
                 foreach (SomerenModel.Student s in studentList)
                 {
@@ -93,18 +96,18 @@ namespace SomerenUI
                     lv_RegisterStudent.Items.Add(li);
                 }
 
-                SomerenLogic.Voorraad_Service stockService = new SomerenLogic.Voorraad_Service();
-                List<Voorraad> stockList = stockService.GetVoorraad();
+                SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+                List<Stock> stockList = stockService.GetStock();
 
-                foreach (SomerenModel.Voorraad v in stockList)
+                foreach (SomerenModel.Stock v in stockList)
                 {
                     ListViewItem li = new ListViewItem(v.Name);
-                    lv_RegisterDrank.Items.Add(li);
+                    lv_RegisterStock.Items.Add(li);
                 }
 
-              
+
             }
-           
+
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,10 +147,13 @@ namespace SomerenUI
         {
             showPanel("Students");
             lbl_Students.Text = ("Lecturers");
-            listViewStudents.Clear();
+            listViewStudents.Items.Clear();
+            pnl_CashRegister.Hide();
+
 
             SomerenLogic.Lecturer_Service lecturerService = new SomerenLogic.Lecturer_Service();
             List<Teacher> lecturerList = lecturerService.GetTeachers();
+
 
             foreach (SomerenModel.Teacher t in lecturerList)
             {
@@ -164,7 +170,7 @@ namespace SomerenUI
         {
             showPanel("Students");
             lbl_Students.Text = ("Rooms");
-            listViewStudents.Clear();
+            listViewStudents.Items.Clear();
 
             SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
             List<Room> roomList = roomService.GetRooms();
@@ -177,10 +183,27 @@ namespace SomerenUI
 
         }
 
-        private void btn_CashRegister_Click(object sender, EventArgs e)
+        //Show the cashregister
+        private void cashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Cash Register");
             lbl_Students.Text = "Cash Register";
+        }
+
+        private void stockToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            showPanel("Students");
+            lbl_Students.Text = ("Stock");
+            listViewStudents.Items.Clear();
+
+            SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+            List<Stock> stockList = stockService.GetStock();
+
+            foreach (SomerenModel.Stock s in stockList)
+            {
+                ListViewItem li = new ListViewItem(s.Name.ToString());
+                listViewStudents.Items.Add(li);
+            }
         }
     }
 }
