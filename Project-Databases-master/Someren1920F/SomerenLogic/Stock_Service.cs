@@ -28,7 +28,9 @@ namespace SomerenLogic
                 v.Name = "TestDrank";
                 v.Price = 474791;
                 v.Amount = 10;
-
+                v.Sold = 0;
+                v.SellDate = DateTime.Now;
+                
                 voorraden.Add(v);
 
                 return voorraden;

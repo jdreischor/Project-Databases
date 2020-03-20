@@ -90,6 +90,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
+            this.StockVerkoop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -391,7 +393,9 @@
             this.listViewStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.StockName,
             this.StockAmount,
-            this.StockPrice});
+            this.StockPrice,
+            this.StockVerkoop,
+            this.columnHeader8});
             this.listViewStock.HideSelection = false;
             this.listViewStock.Location = new System.Drawing.Point(9, 62);
             this.listViewStock.Name = "listViewStock";
@@ -641,6 +645,14 @@
             this.pnl_Rooms.TabIndex = 0;
             this.pnl_Rooms.Text = "Rooms";
             // 
+            // StockVerkoop
+            // 
+            this.StockVerkoop.Text = "Sold";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Sell Date";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -745,6 +757,8 @@
         private System.Windows.Forms.TextBox txt_StockNewPrice;
         private System.Windows.Forms.CheckBox chk_PriceChange;
         private System.Windows.Forms.Label lbl_StockNewPrice;
+        private System.Windows.Forms.ColumnHeader StockVerkoop;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
 

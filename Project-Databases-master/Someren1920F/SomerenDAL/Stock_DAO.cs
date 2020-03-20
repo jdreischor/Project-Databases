@@ -14,7 +14,7 @@ namespace SomerenDAL
     {
         public List<Stock> Db_Get_All_Stock()
         {
-            string query = "SELECT dranknaam, aantal, prijs FROM [Voorraad]";
+            string query = "SELECT dranknaam, aantal, prijs, verkocht, verkoopdatum FROM [Voorraad]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -29,8 +29,8 @@ namespace SomerenDAL
                 {
                     Name = (string)dr["dranknaam"].ToString(),
                     Amount = (int)dr["aantal"],
-                    Price = (double)dr["prijs"]
-
+                    Price = (double)dr["prijs"],
+                    Sold = (int)dr["verkocht"],
                 };
                 voorraden.Add(voorraad);
             }
@@ -60,7 +60,7 @@ namespace SomerenDAL
       
         public void DrinkPurchased(string name)
         {
-            string query = "UPDATE [Voorraad] SET aantal = aantal -1 WHERE dranknaam = " + "'" + name + "'";
+            string query = "UPDATE [Voorraad] SET aantal = aantal -1, verkocht = verkocht + 1 WHERE dranknaam = " + "'" + name + "'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }

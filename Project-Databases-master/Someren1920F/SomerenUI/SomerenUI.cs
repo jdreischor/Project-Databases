@@ -255,7 +255,9 @@ namespace SomerenUI
                 {
                     studService.AddPurchase(s.Number);
                 }
-            }                  
+            }   
+           
+        
         }
 
         //Bring up the panel to change stock
