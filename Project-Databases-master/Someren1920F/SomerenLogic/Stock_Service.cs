@@ -36,6 +36,24 @@ namespace SomerenLogic
             }
         }
 
+        public void SellItem(String name)
+        {
+            stock_db.DrinkPurchased(name);
+        }
 
+        public void UpdateStock(String name, int amount)
+        {
+            stock_db.StockChange(name, amount);
+        }
+
+        public void ChangeName(string oldName, string newName, int amount)
+        {
+            stock_db.StockNameChange(oldName, newName, amount);
+        }
+
+        public void UpdatePrice(string oldName, string newName, double newPrice)
+        {
+            stock_db.StockPriceChange(oldName, newName, newPrice);
+        }
     }
 }

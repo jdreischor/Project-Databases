@@ -36,5 +36,35 @@ namespace SomerenDAL
             }
             return voorraden;
         }
+
+        public void StockChange(string name, int amount)
+        {
+            string query = "UPDATE [Voorraad] SET aantal = " + amount + " WHERE dranknaam = '" + name + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void StockNameChange(string oldName, string newName, int amount)
+        {
+            string query = "UPDATE [Voorraad] SET aantal = " + amount + ", dranknaam = '" + newName + "'" + " WHERE dranknaam = '" + oldName +"'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
+        public void StockPriceChange(string oldName, string newName, double newPrice)
+        {
+            string query = "UPDATE [Voorraad] SET aantal = " + amount + ""
+        }
+
+        
+
+        public void DrinkPurchased(string name)
+        {
+            string query = "UPDATE [Voorraad] SET aantal = aantal -1 WHERE dranknaam = " + "'" + name + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+            
+
+        }
     }
 }

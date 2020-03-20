@@ -45,24 +45,31 @@
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.img_Dashboard = new System.Windows.Forms.PictureBox();
             this.pnl_Stock = new System.Windows.Forms.Panel();
+            this.btn_StockChange = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listViewStock = new System.Windows.Forms.ListView();
+            this.StockName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StockAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StockPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
             this.studentID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.studentName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.studentDOB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.studentClass = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_CashRegister = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.testLabel = new System.Windows.Forms.Label();
+            this.btn_pay = new System.Windows.Forms.Button();
+            this.cmb_Drink = new System.Windows.Forms.ComboBox();
+            this.cmb_Student = new System.Windows.Forms.ComboBox();
             this.lbl_RegisterStock = new System.Windows.Forms.Label();
             this.lbl_RegisterStudent = new System.Windows.Forms.Label();
-            this.lv_RegisterStock = new System.Windows.Forms.ListView();
-            this.lv_RegisterStudent = new System.Windows.Forms.ListView();
             this.lbl_Lecturers = new System.Windows.Forms.Label();
             this.listViewLecturers = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Lecturers = new System.Windows.Forms.Panel();
             this.panelRooms = new System.Windows.Forms.Panel();
             this.listViewRooms = new System.Windows.Forms.ListView();
@@ -70,6 +77,19 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
+            this.pnl_StockChange = new System.Windows.Forms.Panel();
+            this.lbl_StockSelectDrink = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_StockNewName = new System.Windows.Forms.Label();
+            this.cmb_StockSelect = new System.Windows.Forms.ComboBox();
+            this.txt_StockAmount = new System.Windows.Forms.TextBox();
+            this.txt_StockNewName = new System.Windows.Forms.TextBox();
+            this.chk_ChangeName = new System.Windows.Forms.CheckBox();
+            this.btn_Confirm = new System.Windows.Forms.Button();
+            this.analysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chk_Price = new System.Windows.Forms.CheckBox();
+            this.txt_StockNewPrice = new System.Windows.Forms.TextBox();
+            this.lbl_StockNewPrice = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,6 +99,7 @@
             this.pnl_CashRegister.SuspendLayout();
             this.pnl_Lecturers.SuspendLayout();
             this.panelRooms.SuspendLayout();
+            this.pnl_StockChange.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,7 +112,8 @@
             this.activitiesToolStripMenuItem,
             this.roomsToolStripMenuItem,
             this.stockToolStripMenuItem,
-            this.cashToolStripMenuItem});
+            this.cashToolStripMenuItem,
+            this.analysisToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -113,19 +135,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -211,12 +233,24 @@
             // 
             // pnl_Stock
             // 
+            this.pnl_Stock.Controls.Add(this.pnl_StockChange);
+            this.pnl_Stock.Controls.Add(this.btn_StockChange);
             this.pnl_Stock.Controls.Add(this.label3);
             this.pnl_Stock.Controls.Add(this.listViewStock);
             this.pnl_Stock.Location = new System.Drawing.Point(0, 0);
             this.pnl_Stock.Name = "pnl_Stock";
             this.pnl_Stock.Size = new System.Drawing.Size(784, 457);
             this.pnl_Stock.TabIndex = 2;
+            // 
+            // btn_StockChange
+            // 
+            this.btn_StockChange.Location = new System.Drawing.Point(223, 419);
+            this.btn_StockChange.Name = "btn_StockChange";
+            this.btn_StockChange.Size = new System.Drawing.Size(204, 23);
+            this.btn_StockChange.TabIndex = 2;
+            this.btn_StockChange.Text = "Edit Stock";
+            this.btn_StockChange.UseVisualStyleBackColor = true;
+            this.btn_StockChange.Click += new System.EventHandler(this.btn_StockChange_Click);
             // 
             // label3
             // 
@@ -231,12 +265,33 @@
             // 
             // listViewStock
             // 
+            this.listViewStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.StockName,
+            this.StockAmount,
+            this.StockPrice});
             this.listViewStock.HideSelection = false;
-            this.listViewStock.Location = new System.Drawing.Point(8, 62);
+            this.listViewStock.Location = new System.Drawing.Point(9, 62);
             this.listViewStock.Name = "listViewStock";
             this.listViewStock.Size = new System.Drawing.Size(719, 351);
             this.listViewStock.TabIndex = 0;
             this.listViewStock.UseCompatibleStateImageBehavior = false;
+            this.listViewStock.View = System.Windows.Forms.View.Details;
+            // 
+            // StockName
+            // 
+            this.StockName.Text = "Name";
+            this.StockName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.StockName.Width = 197;
+            // 
+            // StockAmount
+            // 
+            this.StockAmount.Text = "Amount";
+            this.StockAmount.Width = 241;
+            // 
+            // StockPrice
+            // 
+            this.StockPrice.Text = "Price";
+            this.StockPrice.Width = 282;
             // 
             // pnl_Students
             // 
@@ -263,7 +318,7 @@
             this.listViewStudents.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.studentID,
             this.studentName,
-            this.studentDOB});
+            this.studentClass});
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(6, 49);
             this.listViewStudents.Name = "listViewStudents";
@@ -282,61 +337,89 @@
             this.studentName.Text = "Name";
             this.studentName.Width = 154;
             // 
-            // studentDOB
+            // studentClass
             // 
-            this.studentDOB.Text = "Date of Birth";
-            this.studentDOB.Width = 163;
+            this.studentClass.Text = "Class";
+            this.studentClass.Width = 163;
             // 
             // pnl_CashRegister
             // 
+            this.pnl_CashRegister.Controls.Add(this.label4);
+            this.pnl_CashRegister.Controls.Add(this.testLabel);
+            this.pnl_CashRegister.Controls.Add(this.btn_pay);
+            this.pnl_CashRegister.Controls.Add(this.cmb_Drink);
+            this.pnl_CashRegister.Controls.Add(this.cmb_Student);
             this.pnl_CashRegister.Controls.Add(this.lbl_RegisterStock);
             this.pnl_CashRegister.Controls.Add(this.lbl_RegisterStudent);
-            this.pnl_CashRegister.Controls.Add(this.lv_RegisterStock);
-            this.pnl_CashRegister.Controls.Add(this.lv_RegisterStudent);
-            this.pnl_CashRegister.Location = new System.Drawing.Point(9, 24);
+            this.pnl_CashRegister.Location = new System.Drawing.Point(0, 0);
             this.pnl_CashRegister.Name = "pnl_CashRegister";
             this.pnl_CashRegister.Size = new System.Drawing.Size(783, 466);
             this.pnl_CashRegister.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "label4";
+            // 
+            // testLabel
+            // 
+            this.testLabel.AutoSize = true;
+            this.testLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testLabel.Location = new System.Drawing.Point(76, 246);
+            this.testLabel.Name = "testLabel";
+            this.testLabel.Size = new System.Drawing.Size(0, 24);
+            this.testLabel.TabIndex = 10;
+            // 
+            // btn_pay
+            // 
+            this.btn_pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pay.Location = new System.Drawing.Point(223, 339);
+            this.btn_pay.Name = "btn_pay";
+            this.btn_pay.Size = new System.Drawing.Size(204, 69);
+            this.btn_pay.TabIndex = 9;
+            this.btn_pay.Text = "Purchase";
+            this.btn_pay.UseVisualStyleBackColor = true;
+            this.btn_pay.Click += new System.EventHandler(this.buttonPay_Click);
+            // 
+            // cmb_Drink
+            // 
+            this.cmb_Drink.FormattingEnabled = true;
+            this.cmb_Drink.Location = new System.Drawing.Point(391, 102);
+            this.cmb_Drink.Name = "cmb_Drink";
+            this.cmb_Drink.Size = new System.Drawing.Size(212, 21);
+            this.cmb_Drink.TabIndex = 5;
+            // 
+            // cmb_Student
+            // 
+            this.cmb_Student.FormattingEnabled = true;
+            this.cmb_Student.Location = new System.Drawing.Point(40, 102);
+            this.cmb_Student.Name = "cmb_Student";
+            this.cmb_Student.Size = new System.Drawing.Size(212, 21);
+            this.cmb_Student.TabIndex = 4;
             // 
             // lbl_RegisterStock
             // 
             this.lbl_RegisterStock.AutoSize = true;
             this.lbl_RegisterStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RegisterStock.Location = new System.Drawing.Point(455, 22);
+            this.lbl_RegisterStock.Location = new System.Drawing.Point(463, 42);
             this.lbl_RegisterStock.Name = "lbl_RegisterStock";
-            this.lbl_RegisterStock.Size = new System.Drawing.Size(76, 29);
+            this.lbl_RegisterStock.Size = new System.Drawing.Size(69, 29);
             this.lbl_RegisterStock.TabIndex = 3;
-            this.lbl_RegisterStock.Text = "Drank";
+            this.lbl_RegisterStock.Text = "Drink";
             // 
             // lbl_RegisterStudent
             // 
             this.lbl_RegisterStudent.AutoSize = true;
             this.lbl_RegisterStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RegisterStudent.Location = new System.Drawing.Point(90, 22);
+            this.lbl_RegisterStudent.Location = new System.Drawing.Point(103, 42);
             this.lbl_RegisterStudent.Name = "lbl_RegisterStudent";
             this.lbl_RegisterStudent.Size = new System.Drawing.Size(95, 29);
             this.lbl_RegisterStudent.TabIndex = 2;
             this.lbl_RegisterStudent.Text = "Student";
-            // 
-            // lv_RegisterStock
-            // 
-            this.lv_RegisterStock.HideSelection = false;
-            this.lv_RegisterStock.Location = new System.Drawing.Point(364, 54);
-            this.lv_RegisterStock.Name = "lv_RegisterStock";
-            this.lv_RegisterStock.Size = new System.Drawing.Size(257, 395);
-            this.lv_RegisterStock.TabIndex = 1;
-            this.lv_RegisterStock.UseCompatibleStateImageBehavior = false;
-            this.lv_RegisterStock.View = System.Windows.Forms.View.List;
-            // 
-            // lv_RegisterStudent
-            // 
-            this.lv_RegisterStudent.HideSelection = false;
-            this.lv_RegisterStudent.Location = new System.Drawing.Point(16, 54);
-            this.lv_RegisterStudent.Name = "lv_RegisterStudent";
-            this.lv_RegisterStudent.Size = new System.Drawing.Size(257, 395);
-            this.lv_RegisterStudent.TabIndex = 0;
-            this.lv_RegisterStudent.UseCompatibleStateImageBehavior = false;
-            this.lv_RegisterStudent.View = System.Windows.Forms.View.List;
             // 
             // lbl_Lecturers
             // 
@@ -352,8 +435,8 @@
             // 
             this.listViewLecturers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader7});
             this.listViewLecturers.HideSelection = false;
             this.listViewLecturers.Location = new System.Drawing.Point(3, 50);
             this.listViewLecturers.Name = "listViewLecturers";
@@ -365,17 +448,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Lecturer ID";
-            this.columnHeader1.Width = 107;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Voornaam";
-            this.columnHeader2.Width = 131;
+            this.columnHeader1.Width = 200;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Achternaam";
-            this.columnHeader3.Width = 131;
+            this.columnHeader3.Text = "Name";
+            this.columnHeader3.Width = 200;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Course";
+            this.columnHeader7.Width = 200;
             // 
             // pnl_Lecturers
             // 
@@ -423,6 +506,7 @@
             // 
             // columnHeader6
             // 
+            this.columnHeader6.Text = "Kind";
             this.columnHeader6.Width = 215;
             // 
             // pnl_Rooms
@@ -434,15 +518,138 @@
             this.pnl_Rooms.TabIndex = 0;
             this.pnl_Rooms.Text = "Rooms";
             // 
+            // pnl_StockChange
+            // 
+            this.pnl_StockChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_StockChange.Controls.Add(this.lbl_StockNewPrice);
+            this.pnl_StockChange.Controls.Add(this.txt_StockNewPrice);
+            this.pnl_StockChange.Controls.Add(this.chk_Price);
+            this.pnl_StockChange.Controls.Add(this.btn_Confirm);
+            this.pnl_StockChange.Controls.Add(this.chk_ChangeName);
+            this.pnl_StockChange.Controls.Add(this.txt_StockNewName);
+            this.pnl_StockChange.Controls.Add(this.txt_StockAmount);
+            this.pnl_StockChange.Controls.Add(this.cmb_StockSelect);
+            this.pnl_StockChange.Controls.Add(this.lbl_StockNewName);
+            this.pnl_StockChange.Controls.Add(this.label1);
+            this.pnl_StockChange.Controls.Add(this.lbl_StockSelectDrink);
+            this.pnl_StockChange.Location = new System.Drawing.Point(158, 24);
+            this.pnl_StockChange.Name = "pnl_StockChange";
+            this.pnl_StockChange.Size = new System.Drawing.Size(473, 430);
+            this.pnl_StockChange.TabIndex = 3;
+            // 
+            // lbl_StockSelectDrink
+            // 
+            this.lbl_StockSelectDrink.AutoSize = true;
+            this.lbl_StockSelectDrink.Location = new System.Drawing.Point(57, 81);
+            this.lbl_StockSelectDrink.Name = "lbl_StockSelectDrink";
+            this.lbl_StockSelectDrink.Size = new System.Drawing.Size(65, 13);
+            this.lbl_StockSelectDrink.TabIndex = 1;
+            this.lbl_StockSelectDrink.Text = "Select Drink";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Enter new amount:";
+            // 
+            // lbl_StockNewName
+            // 
+            this.lbl_StockNewName.AutoSize = true;
+            this.lbl_StockNewName.Location = new System.Drawing.Point(57, 224);
+            this.lbl_StockNewName.Name = "lbl_StockNewName";
+            this.lbl_StockNewName.Size = new System.Drawing.Size(87, 13);
+            this.lbl_StockNewName.TabIndex = 3;
+            this.lbl_StockNewName.Text = "Enter new name:";
+            // 
+            // cmb_StockSelect
+            // 
+            this.cmb_StockSelect.FormattingEnabled = true;
+            this.cmb_StockSelect.Location = new System.Drawing.Point(243, 73);
+            this.cmb_StockSelect.Name = "cmb_StockSelect";
+            this.cmb_StockSelect.Size = new System.Drawing.Size(173, 21);
+            this.cmb_StockSelect.TabIndex = 4;
+            // 
+            // txt_StockAmount
+            // 
+            this.txt_StockAmount.Location = new System.Drawing.Point(243, 148);
+            this.txt_StockAmount.Name = "txt_StockAmount";
+            this.txt_StockAmount.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockAmount.TabIndex = 5;
+            // 
+            // txt_StockNewName
+            // 
+            this.txt_StockNewName.Location = new System.Drawing.Point(244, 221);
+            this.txt_StockNewName.Name = "txt_StockNewName";
+            this.txt_StockNewName.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockNewName.TabIndex = 6;
+            // 
+            // chk_ChangeName
+            // 
+            this.chk_ChangeName.AutoSize = true;
+            this.chk_ChangeName.Location = new System.Drawing.Point(243, 193);
+            this.chk_ChangeName.Name = "chk_ChangeName";
+            this.chk_ChangeName.Size = new System.Drawing.Size(98, 17);
+            this.chk_ChangeName.TabIndex = 7;
+            this.chk_ChangeName.Text = "Change name?";
+            this.chk_ChangeName.UseVisualStyleBackColor = true;
+            this.chk_ChangeName.CheckedChanged += new System.EventHandler(this.chk_ChangeName_CheckedChanged);
+            // 
+            // btn_Confirm
+            // 
+            this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Confirm.Location = new System.Drawing.Point(139, 365);
+            this.btn_Confirm.Name = "btn_Confirm";
+            this.btn_Confirm.Size = new System.Drawing.Size(168, 41);
+            this.btn_Confirm.TabIndex = 8;
+            this.btn_Confirm.Text = "Confirm";
+            this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
+            // 
+            // analysisToolStripMenuItem
+            // 
+            this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
+            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.analysisToolStripMenuItem.Text = "Analysis";
+            // 
+            // chk_Price
+            // 
+            this.chk_Price.AutoSize = true;
+            this.chk_Price.Location = new System.Drawing.Point(244, 263);
+            this.chk_Price.Name = "chk_Price";
+            this.chk_Price.Size = new System.Drawing.Size(96, 17);
+            this.chk_Price.TabIndex = 9;
+            this.chk_Price.Text = "Chenge Price?";
+            this.chk_Price.UseVisualStyleBackColor = true;
+            this.chk_Price.CheckedChanged += new System.EventHandler(this.chk_Price_CheckedChanged);
+            // 
+            // txt_StockNewPrice
+            // 
+            this.txt_StockNewPrice.Location = new System.Drawing.Point(243, 299);
+            this.txt_StockNewPrice.Name = "txt_StockNewPrice";
+            this.txt_StockNewPrice.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockNewPrice.TabIndex = 10;
+            // 
+            // lbl_StockNewPrice
+            // 
+            this.lbl_StockNewPrice.AutoSize = true;
+            this.lbl_StockNewPrice.Location = new System.Drawing.Point(57, 306);
+            this.lbl_StockNewPrice.Name = "lbl_StockNewPrice";
+            this.lbl_StockNewPrice.Size = new System.Drawing.Size(84, 13);
+            this.lbl_StockNewPrice.TabIndex = 11;
+            this.lbl_StockNewPrice.Text = "Enter new price:";
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.pnl_Stock);
             this.Controls.Add(this.pnl_CashRegister);
+            this.Controls.Add(this.pnl_Dashboard);
             this.Controls.Add(this.panelRooms);
             this.Controls.Add(this.pnl_Lecturers);
             this.Controls.Add(this.pnl_Students);
@@ -468,6 +675,8 @@
             this.pnl_Lecturers.PerformLayout();
             this.panelRooms.ResumeLayout(false);
             this.panelRooms.PerformLayout();
+            this.pnl_StockChange.ResumeLayout(false);
+            this.pnl_StockChange.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,15 +704,12 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cashToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader studentID;
-        private System.Windows.Forms.ColumnHeader studentDOB;
+        private System.Windows.Forms.ColumnHeader studentClass;
         private System.Windows.Forms.Panel pnl_CashRegister;
-        private System.Windows.Forms.ListView lv_RegisterStock;
-        private System.Windows.Forms.ListView lv_RegisterStudent;
         private System.Windows.Forms.Label lbl_RegisterStock;
         private System.Windows.Forms.Label lbl_RegisterStudent;
         private System.Windows.Forms.ListView listViewLecturers;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Panel pnl_Lecturers;
         private System.Windows.Forms.Label label2;
@@ -516,6 +722,29 @@
         private System.Windows.Forms.Panel pnl_Stock;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView listViewStock;
+        private System.Windows.Forms.ComboBox cmb_Drink;
+        private System.Windows.Forms.ComboBox cmb_Student;
+        private System.Windows.Forms.Button btn_pay;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label testLabel;
+        private System.Windows.Forms.ColumnHeader StockName;
+        private System.Windows.Forms.ColumnHeader StockAmount;
+        private System.Windows.Forms.ColumnHeader StockPrice;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.Button btn_StockChange;
+        private System.Windows.Forms.Panel pnl_StockChange;
+        private System.Windows.Forms.Button btn_Confirm;
+        private System.Windows.Forms.CheckBox chk_ChangeName;
+        private System.Windows.Forms.TextBox txt_StockNewName;
+        private System.Windows.Forms.TextBox txt_StockAmount;
+        private System.Windows.Forms.ComboBox cmb_StockSelect;
+        private System.Windows.Forms.Label lbl_StockNewName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_StockSelectDrink;
+        private System.Windows.Forms.ToolStripMenuItem analysisToolStripMenuItem;
+        private System.Windows.Forms.TextBox txt_StockNewPrice;
+        private System.Windows.Forms.CheckBox chk_Price;
+        private System.Windows.Forms.Label lbl_StockNewPrice;
     }
 }
 

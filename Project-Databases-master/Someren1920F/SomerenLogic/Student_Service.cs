@@ -25,12 +25,14 @@ namespace SomerenLogic
                 // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
                 List<Student> student = new List<Student>();
                 Student a = new Student();
-                a.Name = "Mr. Test Student";
+                a.FirstName = "Henk";
+                a.LastName = "De Tester";
                 a.Number = 474791;
                 //a.BirthDate = DateTime.Parse("1990-07-04");
                 student.Add(a);
                 Student b = new Student();
-                b.Name = "Mrs. Test Student";
+                b.FirstName = "Sjaak";
+                b.LastName = "De Tester";
                 b.Number = 197474;
                 //b.BirthDate = DateTime.Parse("2019-03-04");
                 student.Add(b);

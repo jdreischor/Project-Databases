@@ -1,13 +1,6 @@
-﻿using SomerenLogic;
-using SomerenModel;
+﻿using SomerenModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -32,11 +25,7 @@ namespace SomerenUI
             {
 
                 // hide all other panels
-                pnl_Students.Hide();
-                pnl_CashRegister.Hide();
-                panelRooms.Hide();
-                pnl_Lecturers.Hide();
-
+                HidePanels();
 
                 // show dashboard
                 pnl_Dashboard.Show();
@@ -45,13 +34,7 @@ namespace SomerenUI
             else if (panelName == "Students")
             {
                 // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_CashRegister.Hide();
-                panelRooms.Hide();
-                pnl_Lecturers.Hide();
-                pnl_Stock.Hide();
-
+                HidePanels();
 
                 // show students
                 pnl_Students.Show();
@@ -66,8 +49,13 @@ namespace SomerenUI
                 // TODO: Listview Aanpassen
                 foreach (SomerenModel.Student s in studentList)
                 {
+                    string studentName = (s.FirstName + " " + s.LastName);
 
-                    ListViewItem li = new ListViewItem(s.Name);
+                    ListViewItem li = new ListViewItem();
+                    li.Text = s.Number.ToString();
+                    li.SubItems.Add(studentName);
+                    li.SubItems.Add(s.Class);
+
                     listViewStudents.Items.Add(li);
 
                 }
@@ -76,13 +64,7 @@ namespace SomerenUI
             else if (panelName == "Lecturers")
             {
                 // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_CashRegister.Hide();
-                panelRooms.Hide();
-                pnl_Students.Hide();
-                pnl_Stock.Hide();
-
+                HidePanels();
 
                 // show lecturers
                 pnl_Lecturers.Show();
@@ -94,7 +76,14 @@ namespace SomerenUI
 
                 foreach (Lecturer l in lecturerList)
                 {
-                    ListViewItem li = new ListViewItem(l.Name);
+
+                    String lecturerName = (l.FirstName + " " + l.LastName);
+
+                    ListViewItem li = new ListViewItem();
+                    li.Text = l.Number.ToString();
+                    li.SubItems.Add(lecturerName);
+                    li.SubItems.Add(l.Course);
+
                     listViewLecturers.Items.Add(li);
                 }
             }
@@ -102,13 +91,7 @@ namespace SomerenUI
             else if (panelName == "Rooms")
             {
                 // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_CashRegister.Hide();
-                pnl_Lecturers.Hide();
-                pnl_Students.Hide();
-                pnl_Stock.Hide();
-
+                HidePanels();
 
                 // show rooms
                 panelRooms.Show();
@@ -116,11 +99,15 @@ namespace SomerenUI
                 SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
                 List<Room> roomList = roomService.GetRooms();
                 listViewRooms.Items.Clear();
-
-
+                
                 foreach (Room r in roomList)
                 {
-                    ListViewItem li = new ListViewItem(r.Number.ToString());
+                    ListViewItem li = new ListViewItem();
+
+                    li.Text = r.Number.ToString();
+                    li.SubItems.Add(r.Capacity.ToString());
+                    li.SubItems.Add(r.Kind);
+
                     listViewRooms.Items.Add(li);
                 }
             }
@@ -128,12 +115,7 @@ namespace SomerenUI
             else if (panelName == "Stock")
             {
                 // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                pnl_CashRegister.Hide();
-                pnl_Lecturers.Hide();
-                pnl_Students.Hide();
-                panelRooms.Hide();
+                HidePanels();
 
                 // show rooms
                 pnl_Stock.Show();
@@ -144,7 +126,12 @@ namespace SomerenUI
 
                 foreach (Stock s in stockList)
                 {
-                    ListViewItem li = new ListViewItem(s.Name);
+                    ListViewItem li = new ListViewItem();
+                 
+                    li.Text = s.Name;
+                    li.SubItems.Add(s.Amount.ToString());
+                    li.SubItems.Add(s.Price.ToString());
+
                     listViewStock.Items.Add(li);
                 }
 
@@ -152,42 +139,13 @@ namespace SomerenUI
             
             else if (panelName == "Cash Register")
             {
-
-                // hide all other panels
-                pnl_Dashboard.Hide();
-                img_Dashboard.Hide();
-                panelRooms.Hide();
-                pnl_Lecturers.Hide();
-                pnl_Students.Hide();
-
-
+                HidePanels();
+                
                 // show register
                 pnl_CashRegister.Show();
-
-                SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
-                List<Student> studentList = studService.GetStudents();
-
-
-                lv_RegisterStudent.Clear();
-                lv_RegisterStock.Clear();
-
-                foreach (SomerenModel.Student s in studentList)
-                {
-                    ListViewItem li = new ListViewItem(s.Name);
-
-                    lv_RegisterStudent.Items.Add(li);
+                StudentInit();
+                DrinkInit();
                 }
-
-                SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
-                List<Stock> stockList = stockService.GetStock();
-
-                foreach (SomerenModel.Stock v in stockList)
-                {
-                    ListViewItem li = new ListViewItem(v.Name);
-                    lv_RegisterStock.Items.Add(li);
-                }
-            }
-
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -248,6 +206,135 @@ namespace SomerenUI
         private void label3_Click(object sender, EventArgs e)
         {
            
+        }
+
+        // Fill combobox with Student options
+        private void StudentInit()
+        {
+            SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+            List<Student> studentList = studService.GetStudents();
+
+            foreach (SomerenModel.Student s in studentList)
+            {
+                cmb_Student.Items.Add(s.FirstName + " " + s.LastName);
+            }
+        }
+
+        // Fill combobox with Drink options
+        private void DrinkInit()
+        {
+            SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+            List<Stock> stockList = stockService.GetStock();
+
+            foreach (SomerenModel.Stock c in stockList)
+            {
+                cmb_Drink.Items.Add(c.Name);
+                cmb_StockSelect.Items.Add(c.Name);
+            }
+        }
+
+        // Send payment to database (amount -1)
+        private void buttonPay_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+            
+
+            string studentName = cmb_Student.SelectedItem.ToString();
+            string drinkName = cmb_Drink.SelectedItem.ToString();
+
+            testLabel.Text = studentName + " Has purchased " + drinkName;
+            stockService.SellItem(drinkName);
+        }
+
+        //Bring up the panel to change stock
+        private void btn_StockChange_Click(object sender, EventArgs e)
+        {
+            DrinkInit();
+
+            pnl_StockChange.Show();
+
+        }
+
+        // Hide all panels and stuff
+        public void HidePanels()
+        {
+            pnl_Dashboard.Hide();
+            img_Dashboard.Hide();
+            pnl_CashRegister.Hide();
+            pnl_Lecturers.Hide();
+            pnl_Students.Hide();
+            pnl_Stock.Hide();
+            panelRooms.Hide();
+            pnl_Rooms.Hide();
+            pnl_StockChange.Hide();
+
+
+            //Hide stuff
+            lbl_StockNewName.Hide();
+            txt_StockNewName.Hide();
+            lbl_StockNewPrice.Hide();
+            txt_StockNewPrice.Hide();
+
+        }
+
+        // Confirm the options and make the corresponding changes to the database
+        private void btn_Confirm_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+
+            string selectedDrink = cmb_StockSelect.SelectedItem.ToString();
+            int newAmount = int.Parse(txt_StockAmount.Text);
+            string newName = "";
+            double price = 1.00;
+
+            // Pak de waarden alleen als de hokjes aangevinkt zijn
+            if (chk_ChangeName.Checked)
+            {
+                newName = txt_StockNewName.Text;
+            }
+            if (chk_Price.Checked)
+            {
+                price = double.Parse(txt_StockNewPrice.Text);
+            }
+                       
+            /*
+             * Hieronder wordt bepaald welke query er verstuurd wordt.
+             * 
+             * Ik geef een opdracht aan Stock_Service om een methode uit te voeren die ik gemaakt heb.
+             * De Methode doet niets anders dan de namen die hierboven zijn aangegeven doorgeven naar de Stock_DAO
+             * Bij de Stock_DAO Heb ik ook weer een aantal methoden aangemaakt welke de query sturen naar de database.
+             * De Stock_DAO pakt de meegegeven waarden, zet ze in de query die wordt aangeroepen en stuurt dit naar de database
+             * 
+             */
+            if (chk_ChangeName.Checked && chk_Price.Checked)
+            {
+                stockService.UpdatePrice(selectedDrink, newName, price);
+            }
+            else if (chk_ChangeName.Checked)
+            {
+                stockService.ChangeName(selectedDrink, newName, newAmount);
+            }
+            else if (chk_Price.Checked)
+            {
+                stockService.UpdatePrice(selectedDrink, selectedDrink, price);
+            }
+            else
+            {
+                stockService.UpdateStock(selectedDrink, newAmount);
+            }
+          
+        }
+
+        private void chk_ChangeName_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_StockNewName.Show();
+            txt_StockNewName.Show();
+        }
+
+        private void chk_Price_CheckedChanged(object sender, EventArgs e)
+        {
+            lbl_StockNewPrice.Show();
+            txt_StockNewPrice.Show();
         }
     }
 }
