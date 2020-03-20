@@ -27,6 +27,7 @@ namespace SomerenLogic
                 Student a = new Student();
                 a.FirstName = "Henk";
                 a.LastName = "De Tester";
+                a.Purchases = 3;
                 a.Number = 474791;
                 //a.BirthDate = DateTime.Parse("1990-07-04");
                 student.Add(a);
@@ -34,12 +35,18 @@ namespace SomerenLogic
                 b.FirstName = "Sjaak";
                 b.LastName = "De Tester";
                 b.Number = 197474;
+                b.Purchases = 2;
                 //b.BirthDate = DateTime.Parse("2019-03-04");
                 student.Add(b);
                 return student;
                 //throw new Exception("Someren couldn't connect to the database");
             }
 
+        }
+
+        public void AddPurchase (int studentNumber)
+        {
+            student_db.AddPurchase(studentNumber);
         }
     }
 }

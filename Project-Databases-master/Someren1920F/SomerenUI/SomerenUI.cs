@@ -133,7 +133,6 @@ namespace SomerenUI
 
                     listViewStock.Items.Add(li);
                 }
-
             }
             
             else if (panelName == "Cash Register")
@@ -229,6 +228,7 @@ namespace SomerenUI
             {
                 cmb_Drink.Items.Add(c.Name);
                 cmb_StockSelect.Items.Add(c.Name);
+               
             }
         }
 
@@ -236,13 +236,26 @@ namespace SomerenUI
         private void buttonPay_Click(object sender, EventArgs e)
         {
             SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+            SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
+            List<Student> studentList = studService.GetStudents();
             
-
+            // Get the name from the selected items
             string studentName = cmb_Student.SelectedItem.ToString();
             string drinkName = cmb_Drink.SelectedItem.ToString();
-
+                       
+            // Give a message that the payment has succeeded
             testLabel.Text = studentName + " Has purchased " + drinkName;
             stockService.SellItem(drinkName);
+
+            // Match the right studentnumber with the right name, then add a purchase to that student.
+            foreach (Student s in studentList)
+            {
+                string fullName = s.FirstName + " " + s.LastName;
+                if (fullName == studentName)
+                {
+                    studService.AddPurchase(s.Number);
+                }
+            }                  
         }
 
         //Bring up the panel to change stock
@@ -262,8 +275,7 @@ namespace SomerenUI
             {
                 chk_PriceChange.Checked = false;
             }
-
-
+            
             DrinkInit();
             pnl_StockChange.Show();
 
@@ -313,12 +325,10 @@ namespace SomerenUI
                        
             /*
              * Hieronder wordt bepaald welke query er verstuurd wordt.
-             * 
-             * Ik geef een opdracht aan Stock_Service om een methode uit te voeren die ik gemaakt heb.
+             * De methode geeft een opdracht aan Stock_Service om een methode uit te voeren 
              * De Methode doet niets anders dan de namen die hierboven zijn aangegeven doorgeven naar de Stock_DAO
-             * Bij de Stock_DAO Heb ik ook weer een aantal methoden aangemaakt welke de query sturen naar de database.
+             * Bij de Stock_DAO zijn ook weer een aantal methoden aangemaakt welke de query sturen naar de database.
              * De Stock_DAO pakt de meegegeven waarden, zet ze in de query die wordt aangeroepen en stuurt dit naar de database
-             * 
              */
             if (chk_ChangeName.Checked && chk_PriceChange.Checked)
             {

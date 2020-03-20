@@ -15,7 +15,7 @@ namespace SomerenDAL
       
         public List<Student> Db_Get_All_Students()
         {
-            string query = "SELECT studentnummer, voornaam, achternaam, klas FROM [Student]";
+            string query = "SELECT studentnummer, voornaam, achternaam, klas, aankopen FROM [Student]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -32,11 +32,19 @@ namespace SomerenDAL
                     Number = (int)dr["studentnummer"],
                     FirstName = (String)dr["voornaam"].ToString(),
                     LastName = (String)dr["achternaam"].ToString(),
-                    Class = (String)dr["klas"].ToString()
+                    Class = (String)dr["klas"].ToString(),
+                    Purchases = (int)dr["aankopen"]
                 };
                 students.Add(student);
             }
             return students;
+        }
+
+        public void AddPurchase(int studentNumber)
+        {
+            string query = "UPDATE [Student] SET aankopen = aankopen +1 WHERE studentnummer = " + studentNumber;
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
         }
 
     }
