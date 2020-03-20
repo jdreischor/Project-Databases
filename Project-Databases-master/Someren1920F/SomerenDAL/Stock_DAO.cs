@@ -53,18 +53,27 @@ namespace SomerenDAL
 
         public void StockPriceChange(string oldName, string newName, double newPrice)
         {
-            string query = "UPDATE [Voorraad] SET aantal = " + amount + ""
+            string query = "UPDATE [Voorraad] SET prijs = " + newPrice + ", dranknaam = '" + newName + "' WHERE dranknaam = '" + oldName + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
         }
-
-        
-
+      
         public void DrinkPurchased(string name)
         {
             string query = "UPDATE [Voorraad] SET aantal = aantal -1 WHERE dranknaam = " + "'" + name + "'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
-            
+        }
+
+        public void ChangeAll(string oldName, string newName, int newAmount, double newPrice)
+        {
+            string query = "UPDATE [Voorraad] SET aantal = " + newAmount + ", dranknaam = '" + newName + "', prijs = " +
+                newPrice + " WHERE dranknaam = '" + oldName + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
 
         }
+
     }
+
 }

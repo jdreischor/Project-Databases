@@ -40,11 +40,24 @@
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.analysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
             this.img_Dashboard = new System.Windows.Forms.PictureBox();
             this.pnl_Stock = new System.Windows.Forms.Panel();
+            this.pnl_StockChange = new System.Windows.Forms.Panel();
+            this.lbl_StockNewPrice = new System.Windows.Forms.Label();
+            this.txt_StockNewPrice = new System.Windows.Forms.TextBox();
+            this.chk_PriceChange = new System.Windows.Forms.CheckBox();
+            this.btn_Confirm = new System.Windows.Forms.Button();
+            this.chk_ChangeName = new System.Windows.Forms.CheckBox();
+            this.txt_StockNewName = new System.Windows.Forms.TextBox();
+            this.txt_StockAmount = new System.Windows.Forms.TextBox();
+            this.cmb_StockSelect = new System.Windows.Forms.ComboBox();
+            this.lbl_StockNewName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_StockSelectDrink = new System.Windows.Forms.Label();
             this.btn_StockChange = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.listViewStock = new System.Windows.Forms.ListView();
@@ -77,29 +90,16 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
-            this.pnl_StockChange = new System.Windows.Forms.Panel();
-            this.lbl_StockSelectDrink = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbl_StockNewName = new System.Windows.Forms.Label();
-            this.cmb_StockSelect = new System.Windows.Forms.ComboBox();
-            this.txt_StockAmount = new System.Windows.Forms.TextBox();
-            this.txt_StockNewName = new System.Windows.Forms.TextBox();
-            this.chk_ChangeName = new System.Windows.Forms.CheckBox();
-            this.btn_Confirm = new System.Windows.Forms.Button();
-            this.analysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chk_Price = new System.Windows.Forms.CheckBox();
-            this.txt_StockNewPrice = new System.Windows.Forms.TextBox();
-            this.lbl_StockNewPrice = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.pnl_Stock.SuspendLayout();
+            this.pnl_StockChange.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             this.pnl_CashRegister.SuspendLayout();
             this.pnl_Lecturers.SuspendLayout();
             this.panelRooms.SuspendLayout();
-            this.pnl_StockChange.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -135,19 +135,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -191,6 +191,12 @@
             this.cashToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.cashToolStripMenuItem.Text = "Cash Register";
             this.cashToolStripMenuItem.Click += new System.EventHandler(this.cashToolStripMenuItem_Click);
+            // 
+            // analysisToolStripMenuItem
+            // 
+            this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
+            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.analysisToolStripMenuItem.Text = "Analysis";
             // 
             // pnl_Dashboard
             // 
@@ -241,6 +247,123 @@
             this.pnl_Stock.Name = "pnl_Stock";
             this.pnl_Stock.Size = new System.Drawing.Size(784, 457);
             this.pnl_Stock.TabIndex = 2;
+            // 
+            // pnl_StockChange
+            // 
+            this.pnl_StockChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_StockChange.Controls.Add(this.lbl_StockNewPrice);
+            this.pnl_StockChange.Controls.Add(this.txt_StockNewPrice);
+            this.pnl_StockChange.Controls.Add(this.chk_PriceChange);
+            this.pnl_StockChange.Controls.Add(this.btn_Confirm);
+            this.pnl_StockChange.Controls.Add(this.chk_ChangeName);
+            this.pnl_StockChange.Controls.Add(this.txt_StockNewName);
+            this.pnl_StockChange.Controls.Add(this.txt_StockAmount);
+            this.pnl_StockChange.Controls.Add(this.cmb_StockSelect);
+            this.pnl_StockChange.Controls.Add(this.lbl_StockNewName);
+            this.pnl_StockChange.Controls.Add(this.label1);
+            this.pnl_StockChange.Controls.Add(this.lbl_StockSelectDrink);
+            this.pnl_StockChange.Location = new System.Drawing.Point(158, 24);
+            this.pnl_StockChange.Name = "pnl_StockChange";
+            this.pnl_StockChange.Size = new System.Drawing.Size(473, 430);
+            this.pnl_StockChange.TabIndex = 3;
+            // 
+            // lbl_StockNewPrice
+            // 
+            this.lbl_StockNewPrice.AutoSize = true;
+            this.lbl_StockNewPrice.Location = new System.Drawing.Point(57, 306);
+            this.lbl_StockNewPrice.Name = "lbl_StockNewPrice";
+            this.lbl_StockNewPrice.Size = new System.Drawing.Size(84, 13);
+            this.lbl_StockNewPrice.TabIndex = 11;
+            this.lbl_StockNewPrice.Text = "Enter new price:";
+            // 
+            // txt_StockNewPrice
+            // 
+            this.txt_StockNewPrice.Location = new System.Drawing.Point(243, 299);
+            this.txt_StockNewPrice.Name = "txt_StockNewPrice";
+            this.txt_StockNewPrice.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockNewPrice.TabIndex = 10;
+            // 
+            // chk_PriceChange
+            // 
+            this.chk_PriceChange.AutoSize = true;
+            this.chk_PriceChange.Location = new System.Drawing.Point(244, 263);
+            this.chk_PriceChange.Name = "chk_PriceChange";
+            this.chk_PriceChange.Size = new System.Drawing.Size(96, 17);
+            this.chk_PriceChange.TabIndex = 9;
+            this.chk_PriceChange.Text = "Chenge Price?";
+            this.chk_PriceChange.UseVisualStyleBackColor = true;
+            this.chk_PriceChange.CheckedChanged += new System.EventHandler(this.chk_Price_CheckedChanged);
+            // 
+            // btn_Confirm
+            // 
+            this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Confirm.Location = new System.Drawing.Point(139, 365);
+            this.btn_Confirm.Name = "btn_Confirm";
+            this.btn_Confirm.Size = new System.Drawing.Size(168, 41);
+            this.btn_Confirm.TabIndex = 8;
+            this.btn_Confirm.Text = "Confirm";
+            this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
+            // 
+            // chk_ChangeName
+            // 
+            this.chk_ChangeName.AutoSize = true;
+            this.chk_ChangeName.Location = new System.Drawing.Point(243, 193);
+            this.chk_ChangeName.Name = "chk_ChangeName";
+            this.chk_ChangeName.Size = new System.Drawing.Size(98, 17);
+            this.chk_ChangeName.TabIndex = 7;
+            this.chk_ChangeName.Text = "Change name?";
+            this.chk_ChangeName.UseVisualStyleBackColor = true;
+            this.chk_ChangeName.CheckedChanged += new System.EventHandler(this.chk_ChangeName_CheckedChanged);
+            // 
+            // txt_StockNewName
+            // 
+            this.txt_StockNewName.Location = new System.Drawing.Point(244, 221);
+            this.txt_StockNewName.Name = "txt_StockNewName";
+            this.txt_StockNewName.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockNewName.TabIndex = 6;
+            // 
+            // txt_StockAmount
+            // 
+            this.txt_StockAmount.Location = new System.Drawing.Point(243, 148);
+            this.txt_StockAmount.Name = "txt_StockAmount";
+            this.txt_StockAmount.Size = new System.Drawing.Size(172, 20);
+            this.txt_StockAmount.TabIndex = 5;
+            // 
+            // cmb_StockSelect
+            // 
+            this.cmb_StockSelect.FormattingEnabled = true;
+            this.cmb_StockSelect.Location = new System.Drawing.Point(243, 73);
+            this.cmb_StockSelect.Name = "cmb_StockSelect";
+            this.cmb_StockSelect.Size = new System.Drawing.Size(173, 21);
+            this.cmb_StockSelect.TabIndex = 4;
+            // 
+            // lbl_StockNewName
+            // 
+            this.lbl_StockNewName.AutoSize = true;
+            this.lbl_StockNewName.Location = new System.Drawing.Point(57, 224);
+            this.lbl_StockNewName.Name = "lbl_StockNewName";
+            this.lbl_StockNewName.Size = new System.Drawing.Size(87, 13);
+            this.lbl_StockNewName.TabIndex = 3;
+            this.lbl_StockNewName.Text = "Enter new name:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Enter new amount:";
+            // 
+            // lbl_StockSelectDrink
+            // 
+            this.lbl_StockSelectDrink.AutoSize = true;
+            this.lbl_StockSelectDrink.Location = new System.Drawing.Point(57, 81);
+            this.lbl_StockSelectDrink.Name = "lbl_StockSelectDrink";
+            this.lbl_StockSelectDrink.Size = new System.Drawing.Size(65, 13);
+            this.lbl_StockSelectDrink.TabIndex = 1;
+            this.lbl_StockSelectDrink.Text = "Select Drink";
             // 
             // btn_StockChange
             // 
@@ -518,129 +641,6 @@
             this.pnl_Rooms.TabIndex = 0;
             this.pnl_Rooms.Text = "Rooms";
             // 
-            // pnl_StockChange
-            // 
-            this.pnl_StockChange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_StockChange.Controls.Add(this.lbl_StockNewPrice);
-            this.pnl_StockChange.Controls.Add(this.txt_StockNewPrice);
-            this.pnl_StockChange.Controls.Add(this.chk_Price);
-            this.pnl_StockChange.Controls.Add(this.btn_Confirm);
-            this.pnl_StockChange.Controls.Add(this.chk_ChangeName);
-            this.pnl_StockChange.Controls.Add(this.txt_StockNewName);
-            this.pnl_StockChange.Controls.Add(this.txt_StockAmount);
-            this.pnl_StockChange.Controls.Add(this.cmb_StockSelect);
-            this.pnl_StockChange.Controls.Add(this.lbl_StockNewName);
-            this.pnl_StockChange.Controls.Add(this.label1);
-            this.pnl_StockChange.Controls.Add(this.lbl_StockSelectDrink);
-            this.pnl_StockChange.Location = new System.Drawing.Point(158, 24);
-            this.pnl_StockChange.Name = "pnl_StockChange";
-            this.pnl_StockChange.Size = new System.Drawing.Size(473, 430);
-            this.pnl_StockChange.TabIndex = 3;
-            // 
-            // lbl_StockSelectDrink
-            // 
-            this.lbl_StockSelectDrink.AutoSize = true;
-            this.lbl_StockSelectDrink.Location = new System.Drawing.Point(57, 81);
-            this.lbl_StockSelectDrink.Name = "lbl_StockSelectDrink";
-            this.lbl_StockSelectDrink.Size = new System.Drawing.Size(65, 13);
-            this.lbl_StockSelectDrink.TabIndex = 1;
-            this.lbl_StockSelectDrink.Text = "Select Drink";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter new amount:";
-            // 
-            // lbl_StockNewName
-            // 
-            this.lbl_StockNewName.AutoSize = true;
-            this.lbl_StockNewName.Location = new System.Drawing.Point(57, 224);
-            this.lbl_StockNewName.Name = "lbl_StockNewName";
-            this.lbl_StockNewName.Size = new System.Drawing.Size(87, 13);
-            this.lbl_StockNewName.TabIndex = 3;
-            this.lbl_StockNewName.Text = "Enter new name:";
-            // 
-            // cmb_StockSelect
-            // 
-            this.cmb_StockSelect.FormattingEnabled = true;
-            this.cmb_StockSelect.Location = new System.Drawing.Point(243, 73);
-            this.cmb_StockSelect.Name = "cmb_StockSelect";
-            this.cmb_StockSelect.Size = new System.Drawing.Size(173, 21);
-            this.cmb_StockSelect.TabIndex = 4;
-            // 
-            // txt_StockAmount
-            // 
-            this.txt_StockAmount.Location = new System.Drawing.Point(243, 148);
-            this.txt_StockAmount.Name = "txt_StockAmount";
-            this.txt_StockAmount.Size = new System.Drawing.Size(172, 20);
-            this.txt_StockAmount.TabIndex = 5;
-            // 
-            // txt_StockNewName
-            // 
-            this.txt_StockNewName.Location = new System.Drawing.Point(244, 221);
-            this.txt_StockNewName.Name = "txt_StockNewName";
-            this.txt_StockNewName.Size = new System.Drawing.Size(172, 20);
-            this.txt_StockNewName.TabIndex = 6;
-            // 
-            // chk_ChangeName
-            // 
-            this.chk_ChangeName.AutoSize = true;
-            this.chk_ChangeName.Location = new System.Drawing.Point(243, 193);
-            this.chk_ChangeName.Name = "chk_ChangeName";
-            this.chk_ChangeName.Size = new System.Drawing.Size(98, 17);
-            this.chk_ChangeName.TabIndex = 7;
-            this.chk_ChangeName.Text = "Change name?";
-            this.chk_ChangeName.UseVisualStyleBackColor = true;
-            this.chk_ChangeName.CheckedChanged += new System.EventHandler(this.chk_ChangeName_CheckedChanged);
-            // 
-            // btn_Confirm
-            // 
-            this.btn_Confirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Confirm.Location = new System.Drawing.Point(139, 365);
-            this.btn_Confirm.Name = "btn_Confirm";
-            this.btn_Confirm.Size = new System.Drawing.Size(168, 41);
-            this.btn_Confirm.TabIndex = 8;
-            this.btn_Confirm.Text = "Confirm";
-            this.btn_Confirm.UseVisualStyleBackColor = true;
-            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
-            // 
-            // analysisToolStripMenuItem
-            // 
-            this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
-            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.analysisToolStripMenuItem.Text = "Analysis";
-            // 
-            // chk_Price
-            // 
-            this.chk_Price.AutoSize = true;
-            this.chk_Price.Location = new System.Drawing.Point(244, 263);
-            this.chk_Price.Name = "chk_Price";
-            this.chk_Price.Size = new System.Drawing.Size(96, 17);
-            this.chk_Price.TabIndex = 9;
-            this.chk_Price.Text = "Chenge Price?";
-            this.chk_Price.UseVisualStyleBackColor = true;
-            this.chk_Price.CheckedChanged += new System.EventHandler(this.chk_Price_CheckedChanged);
-            // 
-            // txt_StockNewPrice
-            // 
-            this.txt_StockNewPrice.Location = new System.Drawing.Point(243, 299);
-            this.txt_StockNewPrice.Name = "txt_StockNewPrice";
-            this.txt_StockNewPrice.Size = new System.Drawing.Size(172, 20);
-            this.txt_StockNewPrice.TabIndex = 10;
-            // 
-            // lbl_StockNewPrice
-            // 
-            this.lbl_StockNewPrice.AutoSize = true;
-            this.lbl_StockNewPrice.Location = new System.Drawing.Point(57, 306);
-            this.lbl_StockNewPrice.Name = "lbl_StockNewPrice";
-            this.lbl_StockNewPrice.Size = new System.Drawing.Size(84, 13);
-            this.lbl_StockNewPrice.TabIndex = 11;
-            this.lbl_StockNewPrice.Text = "Enter new price:";
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,6 +667,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).EndInit();
             this.pnl_Stock.ResumeLayout(false);
             this.pnl_Stock.PerformLayout();
+            this.pnl_StockChange.ResumeLayout(false);
+            this.pnl_StockChange.PerformLayout();
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
             this.pnl_CashRegister.ResumeLayout(false);
@@ -675,8 +677,6 @@
             this.pnl_Lecturers.PerformLayout();
             this.panelRooms.ResumeLayout(false);
             this.panelRooms.PerformLayout();
-            this.pnl_StockChange.ResumeLayout(false);
-            this.pnl_StockChange.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -743,7 +743,7 @@
         private System.Windows.Forms.Label lbl_StockSelectDrink;
         private System.Windows.Forms.ToolStripMenuItem analysisToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_StockNewPrice;
-        private System.Windows.Forms.CheckBox chk_Price;
+        private System.Windows.Forms.CheckBox chk_PriceChange;
         private System.Windows.Forms.Label lbl_StockNewPrice;
     }
 }

@@ -55,5 +55,10 @@ namespace SomerenLogic
         {
             stock_db.StockPriceChange(oldName, newName, newPrice);
         }
+
+        public void UpdateAll(string oldName, string newName, int newAmount, double newPrice)
+        {
+            stock_db.ChangeAll(oldName, newName, newAmount, newPrice);
+        }
     }
 }

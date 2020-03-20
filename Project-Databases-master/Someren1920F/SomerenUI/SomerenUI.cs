@@ -57,7 +57,6 @@ namespace SomerenUI
                     li.SubItems.Add(s.Class);
 
                     listViewStudents.Items.Add(li);
-
                 }
             }
 
@@ -249,8 +248,23 @@ namespace SomerenUI
         //Bring up the panel to change stock
         private void btn_StockChange_Click(object sender, EventArgs e)
         {
-            DrinkInit();
 
+            cmb_StockSelect.Items.Clear();
+            txt_StockAmount.Clear();
+            txt_StockNewName.Clear();
+            txt_StockNewPrice.Clear();
+
+            if (chk_ChangeName.Checked)
+            {
+                chk_ChangeName.Checked = false;
+            }
+            if (chk_PriceChange.Checked)
+            {
+                chk_PriceChange.Checked = false;
+            }
+
+
+            DrinkInit();
             pnl_StockChange.Show();
 
         }
@@ -292,7 +306,7 @@ namespace SomerenUI
             {
                 newName = txt_StockNewName.Text;
             }
-            if (chk_Price.Checked)
+            if (chk_PriceChange.Checked)
             {
                 price = double.Parse(txt_StockNewPrice.Text);
             }
@@ -306,15 +320,15 @@ namespace SomerenUI
              * De Stock_DAO pakt de meegegeven waarden, zet ze in de query die wordt aangeroepen en stuurt dit naar de database
              * 
              */
-            if (chk_ChangeName.Checked && chk_Price.Checked)
+            if (chk_ChangeName.Checked && chk_PriceChange.Checked)
             {
-                stockService.UpdatePrice(selectedDrink, newName, price);
+                stockService.UpdateAll(selectedDrink, newName, newAmount, price);
             }
             else if (chk_ChangeName.Checked)
             {
                 stockService.ChangeName(selectedDrink, newName, newAmount);
             }
-            else if (chk_Price.Checked)
+            else if (chk_PriceChange.Checked)
             {
                 stockService.UpdatePrice(selectedDrink, selectedDrink, price);
             }
@@ -322,7 +336,9 @@ namespace SomerenUI
             {
                 stockService.UpdateStock(selectedDrink, newAmount);
             }
-          
+
+            pnl_StockChange.Hide();
+
         }
 
         private void chk_ChangeName_CheckedChanged(object sender, EventArgs e)
