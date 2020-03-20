@@ -50,3 +50,14 @@ E:\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csp
 E:\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
 E:\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
 E:\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenLogic.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenDAL.dll.config
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\bin\Debug\SomerenModel.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csprojAssemblyReference.cache
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.csproj.CopyComplete
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenLogic\obj\Debug\SomerenLogic.pdb

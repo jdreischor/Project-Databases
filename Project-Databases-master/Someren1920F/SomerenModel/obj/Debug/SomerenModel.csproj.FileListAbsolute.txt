@@ -24,3 +24,8 @@ E:\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csp
 E:\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csproj.CoreCompileInputs.cache
 E:\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.dll
 E:\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenModel\bin\Debug\SomerenModel.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenModel\bin\Debug\SomerenModel.pdb
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.csprojAssemblyReference.cache
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.dll
+D:\School\ProjectDatabases\Project-Databases\Project-Databases-master\Someren1920F\SomerenModel\obj\Debug\SomerenModel.pdb

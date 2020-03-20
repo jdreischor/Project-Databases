@@ -42,11 +42,11 @@
             this.cashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_Dashboard = new System.Windows.Forms.Label();
+            this.img_Dashboard = new System.Windows.Forms.PictureBox();
             this.pnl_Stock = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.listViewStock = new System.Windows.Forms.ListView();
-            this.lbl_Dashboard = new System.Windows.Forms.Label();
-            this.img_Dashboard = new System.Windows.Forms.PictureBox();
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -73,8 +73,8 @@
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnl_Stock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
+            this.pnl_Stock.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             this.pnl_CashRegister.SuspendLayout();
             this.pnl_Lecturers.SuspendLayout();
@@ -113,19 +113,19 @@
             // dashboardToolStripMenuItem1
             // 
             this.dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
-            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem1.Text = "Dashboard";
             this.dashboardToolStripMenuItem1.Click += new System.EventHandler(this.dashboardToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(128, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -190,6 +190,25 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lbl_Dashboard
+            // 
+            this.lbl_Dashboard.AutoSize = true;
+            this.lbl_Dashboard.Location = new System.Drawing.Point(13, 13);
+            this.lbl_Dashboard.Name = "lbl_Dashboard";
+            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
+            this.lbl_Dashboard.TabIndex = 1;
+            this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
+            this.lbl_Dashboard.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // img_Dashboard
+            // 
+            this.img_Dashboard.Location = new System.Drawing.Point(627, 0);
+            this.img_Dashboard.Name = "img_Dashboard";
+            this.img_Dashboard.Size = new System.Drawing.Size(311, 270);
+            this.img_Dashboard.TabIndex = 0;
+            this.img_Dashboard.TabStop = false;
+            this.img_Dashboard.Click += new System.EventHandler(this.img_Dashboard_Click);
+            // 
             // pnl_Stock
             // 
             this.pnl_Stock.Controls.Add(this.label3);
@@ -218,25 +237,6 @@
             this.listViewStock.Size = new System.Drawing.Size(719, 351);
             this.listViewStock.TabIndex = 0;
             this.listViewStock.UseCompatibleStateImageBehavior = false;
-            // 
-            // lbl_Dashboard
-            // 
-            this.lbl_Dashboard.AutoSize = true;
-            this.lbl_Dashboard.Location = new System.Drawing.Point(13, 13);
-            this.lbl_Dashboard.Name = "lbl_Dashboard";
-            this.lbl_Dashboard.Size = new System.Drawing.Size(185, 13);
-            this.lbl_Dashboard.TabIndex = 1;
-            this.lbl_Dashboard.Text = "Welcome to the Someren Application!";
-            this.lbl_Dashboard.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // img_Dashboard
-            // 
-            this.img_Dashboard.Location = new System.Drawing.Point(627, 0);
-            this.img_Dashboard.Name = "img_Dashboard";
-            this.img_Dashboard.Size = new System.Drawing.Size(311, 270);
-            this.img_Dashboard.TabIndex = 0;
-            this.img_Dashboard.TabStop = false;
-            this.img_Dashboard.Click += new System.EventHandler(this.img_Dashboard_Click);
             // 
             // pnl_Students
             // 
@@ -402,6 +402,7 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.listViewRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewRooms.HideSelection = false;
             this.listViewRooms.Location = new System.Drawing.Point(16, 78);
             this.listViewRooms.Name = "listViewRooms";
@@ -456,9 +457,9 @@
             this.pnl_Dashboard.ResumeLayout(false);
             this.pnl_Dashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).EndInit();
             this.pnl_Stock.ResumeLayout(false);
             this.pnl_Stock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).EndInit();
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
             this.pnl_CashRegister.ResumeLayout(false);
