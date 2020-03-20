@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenLogic", "..\Project-Databases-master\Someren1920F\SomerenLogic\SomerenLogic.csproj", "{715FC326-1104-4E49-8DF2-A36E0458067D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenLogic", "SomerenLogic\SomerenLogic.csproj", "{715FC326-1104-4E49-8DF2-A36E0458067D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenDAL", "..\Project-Databases-master\Someren1920F\SomerenDAL\SomerenDAL.csproj", "{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenDAL", "SomerenDAL\SomerenDAL.csproj", "{5C8BDA73-F134-4AF6-BB41-DBE88EBA2615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenModel", "..\Project-Databases-master\Someren1920F\SomerenModel\SomerenModel.csproj", "{90A9ED02-35D3-4D84-80E4-458BC835C722}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenModel", "SomerenModel\SomerenModel.csproj", "{90A9ED02-35D3-4D84-80E4-458BC835C722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenUI", "..\Project-Databases-master\Someren1920F\SomerenUI\SomerenUI.csproj", "{8086AFF6-7CAB-4421-87B8-719B409533AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SomerenUI", "SomerenUI\SomerenUI.csproj", "{8086AFF6-7CAB-4421-87B8-719B409533AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
