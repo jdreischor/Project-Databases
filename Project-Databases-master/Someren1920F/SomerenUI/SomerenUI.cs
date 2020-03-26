@@ -190,6 +190,8 @@ namespace SomerenUI
                 HidePanels();
 
                 pnl_Schedule.Show();
+
+                            
             }
         }
 
