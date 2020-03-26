@@ -163,16 +163,33 @@ namespace SomerenUI
                 foreach (Stock s in stockList)
                 {
                     ListViewItem li = new ListViewItem();
-
-                    li.Text = s.Name;
-                    li.SubItems.Add(s.Amount.ToString());
-                    li.SubItems.Add(s.Price.ToString());
-
-                    listViewAnalysis.Items.Add(li);
+                    if (s.Sold >= 1)
+                    {
+                        li.Text = s.Name;
+                        li.SubItems.Add(s.Amount.ToString());
+                        li.SubItems.Add(s.Price.ToString());
+                        listViewAnalysis.Items.Add(li);
+                    }
                 }
+            } 
+            else if(panelName == "Activities")
+            {
+                HidePanels();
 
+                pnl_Activities.Show();
 
+            } 
+            else if(panelName == "Attendants")
+            {
+                HidePanels();
 
+                pnl_Attendants.Show();
+            }
+            else if(panelName == "Schedule")
+            {
+                HidePanels();
+
+                pnl_Schedule.Show();
             }
         }
 
@@ -331,6 +348,12 @@ namespace SomerenUI
             pnl_Rooms.Hide();
             pnl_Analysis.Hide();
             pnl_StockChange.Hide();
+            pnl_Attendants.Hide();
+            pnl_Activities.Hide();
+            pnl_AddAttendant.Hide();
+            pnl_DeleteAttendant.Hide();
+            pnl_Schedule.Hide();
+            pnl_EditActivities.Hide();
 
 
             //Hide stuff
@@ -401,7 +424,55 @@ namespace SomerenUI
             txt_StockNewPrice.Show();
         }
 
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Schedule");
+        }
 
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Activities");
+        }
+
+        private void btn_EditActivities_Click(object sender, EventArgs e)
+        {
+            pnl_EditActivities.Show();
+        }
+
+        private void attendantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Attendants");
+        }
+
+        private void btn_AddAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_AddAttendant.Show();
+        }
+
+        private void btn_DeleteAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_DeleteAttendant.Show();
+        }
+
+        private void btn_ConfirmAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_AddAttendant.Hide();
+        }
+
+        private void btn_CofirmDeleteAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_DeleteAttendant.Hide();
+        }
+
+        private void btn_SwitchActivity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ConfirmEditAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_EditActivities.Hide();
+        }
     }
 }
 

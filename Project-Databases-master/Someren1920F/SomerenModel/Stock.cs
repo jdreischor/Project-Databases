@@ -13,5 +13,6 @@ namespace SomerenModel
         public double Price { get; set; }
         public int Amount { get; set; }
         public int Sold { get; set; }
+        public string SellDate { get; set; }
     }
 }

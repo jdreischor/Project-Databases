@@ -41,6 +41,7 @@
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cashToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analysisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Dashboard = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Dashboard = new System.Windows.Forms.Label();
@@ -67,7 +68,13 @@
             this.StockVerkoop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Analysis = new System.Windows.Forms.Panel();
+            this.pnl_Activities = new System.Windows.Forms.Panel();
+            this.btn_EditActivities = new System.Windows.Forms.Button();
+            this.listViewActivities = new System.Windows.Forms.ListView();
             this.listViewAnalysis = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -94,9 +101,28 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.attendantsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnl_Attendants = new System.Windows.Forms.Panel();
+            this.listViewAttendants = new System.Windows.Forms.ListView();
+            this.btn_AddAttendant = new System.Windows.Forms.Button();
+            this.btn_DeleteAttendant = new System.Windows.Forms.Button();
+            this.pnl_AddAttendant = new System.Windows.Forms.Panel();
+            this.listViewAddAttendant = new System.Windows.Forms.ListView();
+            this.btn_ConfirmAttendant = new System.Windows.Forms.Button();
+            this.pnl_DeleteAttendant = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.btn_CofirmDeleteAttendant = new System.Windows.Forms.Button();
+            this.pnl_Schedule = new System.Windows.Forms.Panel();
+            this.listViewSchedule = new System.Windows.Forms.ListView();
+            this.btn_SwitchActivity = new System.Windows.Forms.Button();
+            this.pnl_EditActivities = new System.Windows.Forms.Panel();
+            this.txtActivityName = new System.Windows.Forms.TextBox();
+            this.lbl_EditActivityName = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_ConfirmEditActivity = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,10 +130,16 @@
             this.pnl_Stock.SuspendLayout();
             this.pnl_StockChange.SuspendLayout();
             this.pnl_Analysis.SuspendLayout();
+            this.pnl_Activities.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             this.pnl_CashRegister.SuspendLayout();
             this.pnl_Lecturers.SuspendLayout();
             this.panelRooms.SuspendLayout();
+            this.pnl_Attendants.SuspendLayout();
+            this.pnl_AddAttendant.SuspendLayout();
+            this.pnl_DeleteAttendant.SuspendLayout();
+            this.pnl_Schedule.SuspendLayout();
+            this.pnl_EditActivities.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -121,7 +153,9 @@
             this.roomsToolStripMenuItem,
             this.stockToolStripMenuItem,
             this.cashToolStripMenuItem,
-            this.analysisToolStripMenuItem});
+            this.analysisToolStripMenuItem,
+            this.scheduleToolStripMenuItem,
+            this.attendantsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -136,7 +170,7 @@
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(80, 15);
             this.dashboardToolStripMenuItem.Text = "Application";
             this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
@@ -162,50 +196,58 @@
             // studentsToolStripMenuItem
             // 
             this.studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
-            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.studentsToolStripMenuItem.Size = new System.Drawing.Size(65, 15);
             this.studentsToolStripMenuItem.Text = "Students";
             this.studentsToolStripMenuItem.Click += new System.EventHandler(this.studentsToolStripMenuItem_Click);
             // 
             // lecturersToolStripMenuItem
             // 
             this.lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
-            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.lecturersToolStripMenuItem.Size = new System.Drawing.Size(67, 15);
             this.lecturersToolStripMenuItem.Text = "Lecturers";
             this.lecturersToolStripMenuItem.Click += new System.EventHandler(this.lecturersToolStripMenuItem_Click);
             // 
             // activitiesToolStripMenuItem
             // 
             this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 15);
             this.activitiesToolStripMenuItem.Text = "Activities";
+            this.activitiesToolStripMenuItem.Click += new System.EventHandler(this.activitiesToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 15);
             this.roomsToolStripMenuItem.Text = "Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 15);
             this.stockToolStripMenuItem.Text = "Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click_1);
             // 
             // cashToolStripMenuItem
             // 
             this.cashToolStripMenuItem.Name = "cashToolStripMenuItem";
-            this.cashToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.cashToolStripMenuItem.Size = new System.Drawing.Size(90, 15);
             this.cashToolStripMenuItem.Text = "Cash Register";
             this.cashToolStripMenuItem.Click += new System.EventHandler(this.cashToolStripMenuItem_Click);
             // 
             // analysisToolStripMenuItem
             // 
             this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
-            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 15);
             this.analysisToolStripMenuItem.Text = "Analysis";
             this.analysisToolStripMenuItem.Click += new System.EventHandler(this.analysisToolStripMenuItem_Click);
+            // 
+            // scheduleToolStripMenuItem
+            // 
+            this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
+            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(67, 15);
+            this.scheduleToolStripMenuItem.Text = "Schedule";
+            this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -442,6 +484,35 @@
             this.pnl_Analysis.Name = "pnl_Analysis";
             this.pnl_Analysis.Size = new System.Drawing.Size(910, 456);
             this.pnl_Analysis.TabIndex = 9;
+            // 
+            // pnl_Activities
+            // 
+            this.pnl_Activities.Controls.Add(this.pnl_EditActivities);
+            this.pnl_Activities.Controls.Add(this.btn_EditActivities);
+            this.pnl_Activities.Controls.Add(this.listViewActivities);
+            this.pnl_Activities.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Activities.Name = "pnl_Activities";
+            this.pnl_Activities.Size = new System.Drawing.Size(891, 441);
+            this.pnl_Activities.TabIndex = 1;
+            // 
+            // btn_EditActivities
+            // 
+            this.btn_EditActivities.Location = new System.Drawing.Point(695, 106);
+            this.btn_EditActivities.Name = "btn_EditActivities";
+            this.btn_EditActivities.Size = new System.Drawing.Size(152, 50);
+            this.btn_EditActivities.TabIndex = 1;
+            this.btn_EditActivities.Text = "Edit Activities";
+            this.btn_EditActivities.UseVisualStyleBackColor = true;
+            this.btn_EditActivities.Click += new System.EventHandler(this.btn_EditActivities_Click);
+            // 
+            // listViewActivities
+            // 
+            this.listViewActivities.HideSelection = false;
+            this.listViewActivities.Location = new System.Drawing.Point(61, 55);
+            this.listViewActivities.Name = "listViewActivities";
+            this.listViewActivities.Size = new System.Drawing.Size(612, 321);
+            this.listViewActivities.TabIndex = 0;
+            this.listViewActivities.UseCompatibleStateImageBehavior = false;
             // 
             // listViewAnalysis
             // 
@@ -682,13 +753,220 @@
             this.pnl_Rooms.TabIndex = 0;
             this.pnl_Rooms.Text = "Rooms";
             // 
+            // attendantsToolStripMenuItem
+            // 
+            this.attendantsToolStripMenuItem.Name = "attendantsToolStripMenuItem";
+            this.attendantsToolStripMenuItem.Size = new System.Drawing.Size(77, 15);
+            this.attendantsToolStripMenuItem.Text = "Attendants";
+            this.attendantsToolStripMenuItem.Click += new System.EventHandler(this.attendantsToolStripMenuItem_Click);
+            // 
+            // pnl_Attendants
+            // 
+            this.pnl_Attendants.Controls.Add(this.pnl_DeleteAttendant);
+            this.pnl_Attendants.Controls.Add(this.pnl_AddAttendant);
+            this.pnl_Attendants.Controls.Add(this.btn_DeleteAttendant);
+            this.pnl_Attendants.Controls.Add(this.btn_AddAttendant);
+            this.pnl_Attendants.Controls.Add(this.listViewAttendants);
+            this.pnl_Attendants.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Attendants.Name = "pnl_Attendants";
+            this.pnl_Attendants.Size = new System.Drawing.Size(859, 431);
+            this.pnl_Attendants.TabIndex = 10;
+            // 
+            // listViewAttendants
+            // 
+            this.listViewAttendants.HideSelection = false;
+            this.listViewAttendants.Location = new System.Drawing.Point(91, 49);
+            this.listViewAttendants.Name = "listViewAttendants";
+            this.listViewAttendants.Size = new System.Drawing.Size(597, 320);
+            this.listViewAttendants.TabIndex = 0;
+            this.listViewAttendants.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_AddAttendant
+            // 
+            this.btn_AddAttendant.Location = new System.Drawing.Point(705, 152);
+            this.btn_AddAttendant.Name = "btn_AddAttendant";
+            this.btn_AddAttendant.Size = new System.Drawing.Size(142, 23);
+            this.btn_AddAttendant.TabIndex = 1;
+            this.btn_AddAttendant.Text = "Add Attendant";
+            this.btn_AddAttendant.UseVisualStyleBackColor = true;
+            this.btn_AddAttendant.Click += new System.EventHandler(this.btn_AddAttendant_Click);
+            // 
+            // btn_DeleteAttendant
+            // 
+            this.btn_DeleteAttendant.Location = new System.Drawing.Point(705, 218);
+            this.btn_DeleteAttendant.Name = "btn_DeleteAttendant";
+            this.btn_DeleteAttendant.Size = new System.Drawing.Size(142, 23);
+            this.btn_DeleteAttendant.TabIndex = 2;
+            this.btn_DeleteAttendant.Text = "Delete Attendant";
+            this.btn_DeleteAttendant.UseVisualStyleBackColor = true;
+            this.btn_DeleteAttendant.Click += new System.EventHandler(this.btn_DeleteAttendant_Click);
+            // 
+            // pnl_AddAttendant
+            // 
+            this.pnl_AddAttendant.Controls.Add(this.btn_ConfirmAttendant);
+            this.pnl_AddAttendant.Controls.Add(this.listViewAddAttendant);
+            this.pnl_AddAttendant.Location = new System.Drawing.Point(116, 3);
+            this.pnl_AddAttendant.Name = "pnl_AddAttendant";
+            this.pnl_AddAttendant.Size = new System.Drawing.Size(482, 413);
+            this.pnl_AddAttendant.TabIndex = 3;
+            // 
+            // listViewAddAttendant
+            // 
+            this.listViewAddAttendant.HideSelection = false;
+            this.listViewAddAttendant.Location = new System.Drawing.Point(18, 23);
+            this.listViewAddAttendant.Name = "listViewAddAttendant";
+            this.listViewAddAttendant.Size = new System.Drawing.Size(293, 382);
+            this.listViewAddAttendant.TabIndex = 0;
+            this.listViewAddAttendant.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_ConfirmAttendant
+            // 
+            this.btn_ConfirmAttendant.Location = new System.Drawing.Point(317, 318);
+            this.btn_ConfirmAttendant.Name = "btn_ConfirmAttendant";
+            this.btn_ConfirmAttendant.Size = new System.Drawing.Size(142, 33);
+            this.btn_ConfirmAttendant.TabIndex = 1;
+            this.btn_ConfirmAttendant.Text = "Confirm";
+            this.btn_ConfirmAttendant.UseVisualStyleBackColor = true;
+            this.btn_ConfirmAttendant.Click += new System.EventHandler(this.btn_ConfirmAttendant_Click);
+            // 
+            // pnl_DeleteAttendant
+            // 
+            this.pnl_DeleteAttendant.Controls.Add(this.btn_CofirmDeleteAttendant);
+            this.pnl_DeleteAttendant.Controls.Add(this.listView1);
+            this.pnl_DeleteAttendant.Location = new System.Drawing.Point(46, 10);
+            this.pnl_DeleteAttendant.Name = "pnl_DeleteAttendant";
+            this.pnl_DeleteAttendant.Size = new System.Drawing.Size(414, 438);
+            this.pnl_DeleteAttendant.TabIndex = 4;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 9);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(262, 386);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_CofirmDeleteAttendant
+            // 
+            this.btn_CofirmDeleteAttendant.Location = new System.Drawing.Point(271, 333);
+            this.btn_CofirmDeleteAttendant.Name = "btn_CofirmDeleteAttendant";
+            this.btn_CofirmDeleteAttendant.Size = new System.Drawing.Size(121, 38);
+            this.btn_CofirmDeleteAttendant.TabIndex = 1;
+            this.btn_CofirmDeleteAttendant.Text = "Delete";
+            this.btn_CofirmDeleteAttendant.UseVisualStyleBackColor = true;
+            this.btn_CofirmDeleteAttendant.Click += new System.EventHandler(this.btn_CofirmDeleteAttendant_Click);
+            // 
+            // pnl_Schedule
+            // 
+            this.pnl_Schedule.Controls.Add(this.btn_SwitchActivity);
+            this.pnl_Schedule.Controls.Add(this.listViewSchedule);
+            this.pnl_Schedule.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Schedule.Name = "pnl_Schedule";
+            this.pnl_Schedule.Size = new System.Drawing.Size(920, 457);
+            this.pnl_Schedule.TabIndex = 11;
+            // 
+            // listViewSchedule
+            // 
+            this.listViewSchedule.HideSelection = false;
+            this.listViewSchedule.Location = new System.Drawing.Point(12, 10);
+            this.listViewSchedule.Name = "listViewSchedule";
+            this.listViewSchedule.Size = new System.Drawing.Size(716, 428);
+            this.listViewSchedule.TabIndex = 0;
+            this.listViewSchedule.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_SwitchActivity
+            // 
+            this.btn_SwitchActivity.Location = new System.Drawing.Point(741, 370);
+            this.btn_SwitchActivity.Name = "btn_SwitchActivity";
+            this.btn_SwitchActivity.Size = new System.Drawing.Size(154, 46);
+            this.btn_SwitchActivity.TabIndex = 1;
+            this.btn_SwitchActivity.Text = "Switch Activity";
+            this.btn_SwitchActivity.UseVisualStyleBackColor = true;
+            this.btn_SwitchActivity.Click += new System.EventHandler(this.btn_SwitchActivity_Click);
+            // 
+            // pnl_EditActivities
+            // 
+            this.pnl_EditActivities.Controls.Add(this.btn_ConfirmEditActivity);
+            this.pnl_EditActivities.Controls.Add(this.label6);
+            this.pnl_EditActivities.Controls.Add(this.label5);
+            this.pnl_EditActivities.Controls.Add(this.textBox2);
+            this.pnl_EditActivities.Controls.Add(this.textBox1);
+            this.pnl_EditActivities.Controls.Add(this.lbl_EditActivityName);
+            this.pnl_EditActivities.Controls.Add(this.txtActivityName);
+            this.pnl_EditActivities.Location = new System.Drawing.Point(61, 37);
+            this.pnl_EditActivities.Name = "pnl_EditActivities";
+            this.pnl_EditActivities.Size = new System.Drawing.Size(699, 416);
+            this.pnl_EditActivities.TabIndex = 12;
+            // 
+            // txtActivityName
+            // 
+            this.txtActivityName.Location = new System.Drawing.Point(176, 66);
+            this.txtActivityName.Name = "txtActivityName";
+            this.txtActivityName.Size = new System.Drawing.Size(170, 20);
+            this.txtActivityName.TabIndex = 0;
+            // 
+            // lbl_EditActivityName
+            // 
+            this.lbl_EditActivityName.AutoSize = true;
+            this.lbl_EditActivityName.Location = new System.Drawing.Point(27, 68);
+            this.lbl_EditActivityName.Name = "lbl_EditActivityName";
+            this.lbl_EditActivityName.Size = new System.Drawing.Size(75, 13);
+            this.lbl_EditActivityName.TabIndex = 1;
+            this.lbl_EditActivityName.Text = "Activity Name:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(176, 251);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(176, 155);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(170, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Number of Students:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 245);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Number of Attendants:";
+            // 
+            // btn_ConfirmEditActivity
+            // 
+            this.btn_ConfirmEditActivity.Location = new System.Drawing.Point(396, 324);
+            this.btn_ConfirmEditActivity.Name = "btn_ConfirmEditActivity";
+            this.btn_ConfirmEditActivity.Size = new System.Drawing.Size(231, 55);
+            this.btn_ConfirmEditActivity.TabIndex = 6;
+            this.btn_ConfirmEditActivity.Text = "Confirm";
+            this.btn_ConfirmEditActivity.UseVisualStyleBackColor = true;
+            this.btn_ConfirmEditActivity.Click += new System.EventHandler(this.btn_ConfirmEditAttendant_Click);
+            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
-            this.Controls.Add(this.pnl_Analysis);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pnl_Schedule);
+            this.Controls.Add(this.pnl_Attendants);
+            this.Controls.Add(this.pnl_Activities);
+            this.Controls.Add(this.pnl_Analysis);
             this.Controls.Add(this.pnl_Stock);
             this.Controls.Add(this.pnl_CashRegister);
             this.Controls.Add(this.pnl_Dashboard);
@@ -712,6 +990,7 @@
             this.pnl_StockChange.ResumeLayout(false);
             this.pnl_StockChange.PerformLayout();
             this.pnl_Analysis.ResumeLayout(false);
+            this.pnl_Activities.ResumeLayout(false);
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
             this.pnl_CashRegister.ResumeLayout(false);
@@ -720,6 +999,12 @@
             this.pnl_Lecturers.PerformLayout();
             this.panelRooms.ResumeLayout(false);
             this.panelRooms.PerformLayout();
+            this.pnl_Attendants.ResumeLayout(false);
+            this.pnl_AddAttendant.ResumeLayout(false);
+            this.pnl_DeleteAttendant.ResumeLayout(false);
+            this.pnl_Schedule.ResumeLayout(false);
+            this.pnl_EditActivities.ResumeLayout(false);
+            this.pnl_EditActivities.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,6 +1080,32 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
+        private System.Windows.Forms.Panel pnl_Activities;
+        private System.Windows.Forms.Button btn_EditActivities;
+        private System.Windows.Forms.ListView listViewActivities;
+        private System.Windows.Forms.ToolStripMenuItem attendantsToolStripMenuItem;
+        private System.Windows.Forms.Panel pnl_Attendants;
+        private System.Windows.Forms.ListView listViewAttendants;
+        private System.Windows.Forms.Button btn_DeleteAttendant;
+        private System.Windows.Forms.Button btn_AddAttendant;
+        private System.Windows.Forms.Panel pnl_AddAttendant;
+        private System.Windows.Forms.Button btn_ConfirmAttendant;
+        private System.Windows.Forms.ListView listViewAddAttendant;
+        private System.Windows.Forms.Panel pnl_DeleteAttendant;
+        private System.Windows.Forms.Button btn_CofirmDeleteAttendant;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Panel pnl_Schedule;
+        private System.Windows.Forms.ListView listViewSchedule;
+        private System.Windows.Forms.Button btn_SwitchActivity;
+        private System.Windows.Forms.Panel pnl_EditActivities;
+        private System.Windows.Forms.Button btn_ConfirmEditActivity;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_EditActivityName;
+        private System.Windows.Forms.TextBox txtActivityName;
     }
 }
 
