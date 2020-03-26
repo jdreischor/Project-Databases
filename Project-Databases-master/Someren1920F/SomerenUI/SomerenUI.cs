@@ -141,9 +141,39 @@ namespace SomerenUI
                 
                 // show register
                 pnl_CashRegister.Show();
+
+                cmb_Drink.Items.Clear();
+                cmb_Student.Items.Clear();
+           
                 StudentInit();
                 DrinkInit();
+            }
+
+
+            else if (panelName == "Analysis")
+            {
+                HidePanels();
+
+                pnl_Analysis.Show();
+
+                SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
+                List<Stock> stockList = stockService.GetStock();
+                listViewAnalysis.Items.Clear();
+
+                foreach (Stock s in stockList)
+                {
+                    ListViewItem li = new ListViewItem();
+
+                    li.Text = s.Name;
+                    li.SubItems.Add(s.Amount.ToString());
+                    li.SubItems.Add(s.Price.ToString());
+
+                    listViewAnalysis.Items.Add(li);
                 }
+
+
+
+            }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -199,6 +229,11 @@ namespace SomerenUI
         private void stockToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             showPanel("Stock");
+        }
+
+        private void analysisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showPanel("Analysis");
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -294,6 +329,7 @@ namespace SomerenUI
             pnl_Stock.Hide();
             panelRooms.Hide();
             pnl_Rooms.Hide();
+            pnl_Analysis.Hide();
             pnl_StockChange.Hide();
 
 
@@ -364,5 +400,8 @@ namespace SomerenUI
             lbl_StockNewPrice.Show();
             txt_StockNewPrice.Show();
         }
+
+
     }
 }
+

@@ -74,6 +74,13 @@ namespace SomerenDAL
 
         }
 
+        public void GetAllSold(string drankNaam)
+        {
+            string query = "SELECT dranknaam, drankprijs, verkocht FROM Voorraad WHERE dranknaam = '" + drankNaam + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteSelectQuery(query, sqlParameters);
+         }
+
     }
 
 }

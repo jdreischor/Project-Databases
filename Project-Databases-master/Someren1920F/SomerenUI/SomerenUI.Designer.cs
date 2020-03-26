@@ -64,6 +64,10 @@
             this.StockName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.StockPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.StockVerkoop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pnl_Analysis = new System.Windows.Forms.Panel();
+            this.listViewAnalysis = new System.Windows.Forms.ListView();
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -90,14 +94,16 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
-            this.StockVerkoop = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_Dashboard)).BeginInit();
             this.pnl_Stock.SuspendLayout();
             this.pnl_StockChange.SuspendLayout();
+            this.pnl_Analysis.SuspendLayout();
             this.pnl_Students.SuspendLayout();
             this.pnl_CashRegister.SuspendLayout();
             this.pnl_Lecturers.SuspendLayout();
@@ -199,6 +205,7 @@
             this.analysisToolStripMenuItem.Name = "analysisToolStripMenuItem";
             this.analysisToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.analysisToolStripMenuItem.Text = "Analysis";
+            this.analysisToolStripMenuItem.Click += new System.EventHandler(this.analysisToolStripMenuItem_Click);
             // 
             // pnl_Dashboard
             // 
@@ -419,6 +426,36 @@
             // 
             this.StockPrice.Text = "Price";
             this.StockPrice.Width = 282;
+            // 
+            // StockVerkoop
+            // 
+            this.StockVerkoop.Text = "Sold";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Sell Date";
+            // 
+            // pnl_Analysis
+            // 
+            this.pnl_Analysis.Controls.Add(this.listViewAnalysis);
+            this.pnl_Analysis.Location = new System.Drawing.Point(28, 37);
+            this.pnl_Analysis.Name = "pnl_Analysis";
+            this.pnl_Analysis.Size = new System.Drawing.Size(910, 456);
+            this.pnl_Analysis.TabIndex = 9;
+            // 
+            // listViewAnalysis
+            // 
+            this.listViewAnalysis.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listViewAnalysis.HideSelection = false;
+            this.listViewAnalysis.Location = new System.Drawing.Point(68, 106);
+            this.listViewAnalysis.Name = "listViewAnalysis";
+            this.listViewAnalysis.Size = new System.Drawing.Size(700, 335);
+            this.listViewAnalysis.TabIndex = 0;
+            this.listViewAnalysis.UseCompatibleStateImageBehavior = false;
+            this.listViewAnalysis.View = System.Windows.Forms.View.Details;
             // 
             // pnl_Students
             // 
@@ -645,19 +682,12 @@
             this.pnl_Rooms.TabIndex = 0;
             this.pnl_Rooms.Text = "Rooms";
             // 
-            // StockVerkoop
-            // 
-            this.StockVerkoop.Text = "Sold";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Sell Date";
-            // 
             // SomerenUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 505);
+            this.Controls.Add(this.pnl_Analysis);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pnl_Stock);
             this.Controls.Add(this.pnl_CashRegister);
@@ -681,6 +711,7 @@
             this.pnl_Stock.PerformLayout();
             this.pnl_StockChange.ResumeLayout(false);
             this.pnl_StockChange.PerformLayout();
+            this.pnl_Analysis.ResumeLayout(false);
             this.pnl_Students.ResumeLayout(false);
             this.pnl_Students.PerformLayout();
             this.pnl_CashRegister.ResumeLayout(false);
@@ -759,6 +790,11 @@
         private System.Windows.Forms.Label lbl_StockNewPrice;
         private System.Windows.Forms.ColumnHeader StockVerkoop;
         private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Panel pnl_Analysis;
+        private System.Windows.Forms.ListView listViewAnalysis;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
 

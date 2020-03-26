@@ -29,7 +29,6 @@ namespace SomerenLogic
                 v.Price = 474791;
                 v.Amount = 10;
                 v.Sold = 0;
-                v.SellDate = DateTime.Now;
                 
                 voorraden.Add(v);
 
@@ -61,6 +60,11 @@ namespace SomerenLogic
         public void UpdateAll(string oldName, string newName, int newAmount, double newPrice)
         {
             stock_db.ChangeAll(oldName, newName, newAmount, newPrice);
+        }
+
+        public void GetSold(string drankNaam)
+        {
+            stock_db.GetAllSold(drankNaam);
         }
     }
 }
