@@ -30,6 +30,11 @@ namespace SomerenLogic
                 //throw new Exception("Someren couldn't connect to the database");
             }
         }
+
+        public void ChangeActivity(string newDate, int activityID)
+        {
+            activity_db.ChangeDates(newDate, activityID);
+        }
     }
 }
 

@@ -12,5 +12,6 @@ namespace SomerenModel
         public String Omschijving { get; set; }
         public int aantalStudenten { get; set; }
         public int aantalBegeleiders { get; set; }
+        public string Day { get; set; }
     }
 }

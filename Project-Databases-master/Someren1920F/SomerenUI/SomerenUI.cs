@@ -191,7 +191,22 @@ namespace SomerenUI
 
                 pnl_Schedule.Show();
 
-                            
+                SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+                List<Activity> activityList = activityService.GetActivities();
+
+                foreach(Activity a in activityList)
+                {
+                    ListViewItem li = new ListViewItem();
+
+
+                    //else if (a.Day == "tuesday")
+                    //{
+                    //    li.SubItems.Add(a.Omschijving);
+                    //    listViewActivities.Items.Add(li);
+                    //}
+
+                }
+                                          
             }
         }
 
@@ -468,12 +483,70 @@ namespace SomerenUI
 
         private void btn_SwitchActivity_Click(object sender, EventArgs e)
         {
+            string selectedDate = cal_SchedulePicker.SelectionRange.Start.ToString();
+            DateTime selectedDateTime = DateTime.Parse(selectedDate);
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+            List<Activity> activityList = activityService.GetActivities();
+            
 
+            if(selectedDateTime.DayOfWeek == DayOfWeek.Monday)
+            {
+                activityService.ChangeActivity("tuesday", 1);
+            } 
+            else if(selectedDateTime.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                activityService.ChangeActivity("monday", 1);
+            }
         }
 
         private void btn_ConfirmEditAttendant_Click(object sender, EventArgs e)
         {
             pnl_EditActivities.Hide();
+        }
+
+        private void btn_ScheduleSelectDAy_Click(object sender, EventArgs e)
+        {
+            listViewSchedule.Items.Clear();
+            string selectedDate = cal_SchedulePicker.SelectionRange.Start.ToString();
+            DateTime selectedDateTime = DateTime.Parse(selectedDate);
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+            List<Activity> activityList = activityService.GetActivities();
+
+
+            if (selectedDateTime.DayOfWeek == DayOfWeek.Monday)
+            {
+                
+                foreach (Activity a in activityList)
+                {
+                    if (a.Day == "monday")
+                    {
+                        ListViewItem li = new ListViewItem();
+
+                        li.Text = a.Omschijving;
+                        li.SubItems.Add(a.aantalStudenten.ToString());
+                        li.SubItems.Add(a.aantalBegeleiders.ToString());
+
+                        listViewSchedule.Items.Add(li);
+                    }
+                }
+            } else if(selectedDateTime.DayOfWeek == DayOfWeek.Tuesday)
+            {
+                foreach(Activity a in activityList)
+                {
+                    if (a.Day == "tuesday")
+                    {
+                        ListViewItem li = new ListViewItem();
+
+                        li.Text = a.Omschijving;
+                        li.SubItems.Add(a.aantalStudenten.ToString());
+                        li.SubItems.Add(a.aantalBegeleiders.ToString());
+
+
+                        listViewSchedule.Items.Add(li);
+                    }
+                }
+            }
+
         }
     }
 }

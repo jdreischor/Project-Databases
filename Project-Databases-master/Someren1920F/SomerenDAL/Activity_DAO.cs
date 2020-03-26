@@ -14,7 +14,7 @@ namespace SomerenDAL
     {
         public List<Activity> Db_Get_All_Activities()
         {
-            string query = "SELECT activityid, omschrijving, aantalstudenten, aantalbegeleiders FROM [Activiteit]";
+            string query = "SELECT id, omschrijving, aantalStudenten, aantalBegeleiders, dag FROM [Activiteit]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
@@ -28,14 +28,22 @@ namespace SomerenDAL
                 Activity activity = new Activity()
                 {
 
-                    Id = (int)dr["activiteitid"],
+                    Id = (int)dr["id"],
                     Omschijving = (String)dr["omschrijving"].ToString(),
-                    aantalStudenten = (int)dr["aantalstudenten"],
-                    aantalBegeleiders = (int)dr["aantalbegeleiders"],
+                    aantalStudenten = (int)dr["aantalStudenten"],
+                    aantalBegeleiders = (int)dr["aantalBegeleiders"],
+                    Day = (string)dr["dag"].ToString()
                 };
                 activities.Add(activity);
             }
             return activities;
+        }
+
+        public void ChangeDates(string newDate, int activityID)
+        {
+            string query = "UPDATE [Activiteit] SET dag = '" + newDate + "' WHERE id = '" + activityID + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
         }
     }
 }
