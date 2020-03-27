@@ -31,9 +31,38 @@ namespace SomerenLogic
             }
         }
 
-        public void ChangeActivity(string newDate, int activityID)
+        public void ChangeActivity(string newDate, string activityName)
         {
-            activity_db.ChangeDates(newDate, activityID);
+            activity_db.ChangeDates(newDate, activityName);
+        }
+
+        public List<Activity> GetDayActivity(string day)
+        {
+            try
+            {
+                List<Activity> activities = activity_db.DB_Get_Day_Activity(day);
+                return activities;
+            }
+            catch (Exception)
+            {
+                // something went wrong connecting to the database, so we will add a fake student to the list to make sure the rest of the application continues working!
+                List<Activity> activities = new List<Activity>();
+
+                return activities;
+                //throw new Exception("Someren couldn't connect to the database");
+            }
+        }
+
+        public List<Activity> EmptyActivity()
+        {
+            List<Activity> emptyList = new List<Activity>();
+
+            return emptyList;
+        }
+
+        public void AddActivity(int Id, string Omschrijving, int AantalStudenten, int AantalBegeleiders)
+        {
+            activity_db.AddActivity(Id, Omschrijving, AantalStudenten, AantalBegeleiders);
         }
     }
 }

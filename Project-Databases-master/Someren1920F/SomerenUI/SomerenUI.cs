@@ -98,7 +98,7 @@ namespace SomerenUI
                 SomerenLogic.Room_Service roomService = new SomerenLogic.Room_Service();
                 List<Room> roomList = roomService.GetRooms();
                 listViewRooms.Items.Clear();
-                
+
                 foreach (Room r in roomList)
                 {
                     ListViewItem li = new ListViewItem();
@@ -126,7 +126,7 @@ namespace SomerenUI
                 foreach (Stock s in stockList)
                 {
                     ListViewItem li = new ListViewItem();
-                 
+
                     li.Text = s.Name;
                     li.SubItems.Add(s.Amount.ToString());
                     li.SubItems.Add(s.Price.ToString());
@@ -134,17 +134,17 @@ namespace SomerenUI
                     listViewStock.Items.Add(li);
                 }
             }
-            
+
             else if (panelName == "Cash Register")
             {
                 HidePanels();
-                
+
                 // show register
                 pnl_CashRegister.Show();
 
                 cmb_Drink.Items.Clear();
                 cmb_Student.Items.Clear();
-           
+
                 StudentInit();
                 DrinkInit();
             }
@@ -171,48 +171,106 @@ namespace SomerenUI
                         listViewAnalysis.Items.Add(li);
                     }
                 }
-            } 
-            else if(panelName == "Activities")
+            }
+
+            else if (panelName == "Activities")
             {
                 HidePanels();
 
                 pnl_Activities.Show();
 
-            } 
-            else if(panelName == "Attendants")
+                listViewActivities.Items.Clear();
+                ShowActivities();
+            }
+
+            else if (panelName == "Attendants")
             {
                 HidePanels();
 
                 pnl_Attendants.Show();
+
+                // show all current attendants
+                SomerenLogic.Attendant_Service AttendantService = new SomerenLogic.Attendant_Service();
+                List<Attendant> attendantList = AttendantService.GetAttendants();
+
+
+
+                listViewAttendants.Items.Clear();
+
+                foreach (Attendant a in attendantList)
+                {
+
+                    String attendantName = (a.voornaam + " " + a.achternaam);
+
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Id.ToString();
+                    li.SubItems.Add(attendantName);
+                    listViewAttendants.Items.Add(li);
+                }
+
+
             }
-            else if(panelName == "Schedule")
+
+            else if (panelName == "DeleteAttendant")
+            {
+                pnl_DeleteAttendant.Show();
+
+                // show all current attendants
+                SomerenLogic.Attendant_Service AttendantService = new SomerenLogic.Attendant_Service();
+                List<Attendant> attendantList = AttendantService.GetAttendants();
+
+
+
+                listViewDeleteAttendant.Items.Clear();
+
+                foreach (Attendant a in attendantList)
+                {
+
+                    String attendantName = (a.voornaam + " " + a.achternaam);
+
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Id.ToString();
+                    li.SubItems.Add(attendantName);
+                    listViewDeleteAttendant.Items.Add(li);
+                }
+
+            }
+
+            else if (panelName == "AddAttendants")
+            {
+                pnl_AddAttendant.Show();
+
+                // show all non attendants
+                SomerenLogic.Attendant_Service AttendantService = new SomerenLogic.Attendant_Service();
+                List<Attendant> attendantList = AttendantService.GetNonAttendants();
+
+                listViewAddAttendant.Items.Clear();
+
+                foreach (Attendant a in attendantList)
+                {
+
+                    String attendantName = (a.voornaam + " " + a.achternaam);
+
+                    ListViewItem li = new ListViewItem();
+                    li.Text = a.Id.ToString();
+                    li.SubItems.Add(attendantName);
+                    listViewAddAttendant.Items.Add(li);
+                }
+            }
+            else if (panelName == "Schedule")
             {
                 HidePanels();
 
                 pnl_Schedule.Show();
-
-                SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
-                List<Activity> activityList = activityService.GetActivities();
-
-                foreach(Activity a in activityList)
-                {
-                    ListViewItem li = new ListViewItem();
+                ShowMonday();
 
 
-                    //else if (a.Day == "tuesday")
-                    //{
-                    //    li.SubItems.Add(a.Omschijving);
-                    //    listViewActivities.Items.Add(li);
-                    //}
-
-                }
-                                          
             }
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           //
+            //
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -241,7 +299,7 @@ namespace SomerenUI
         }
 
 
-       // Show the teachers
+        // Show the teachers
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Lecturers");
@@ -257,7 +315,7 @@ namespace SomerenUI
         private void cashToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showPanel("Cash Register");
-           
+
         }
 
         private void stockToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -272,7 +330,7 @@ namespace SomerenUI
 
         private void label3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         // Fill combobox with Student options
@@ -297,7 +355,7 @@ namespace SomerenUI
             {
                 cmb_Drink.Items.Add(c.Name);
                 cmb_StockSelect.Items.Add(c.Name);
-               
+
             }
         }
 
@@ -307,11 +365,11 @@ namespace SomerenUI
             SomerenLogic.Stock_Service stockService = new SomerenLogic.Stock_Service();
             SomerenLogic.Student_Service studService = new SomerenLogic.Student_Service();
             List<Student> studentList = studService.GetStudents();
-            
+
             // Get the name from the selected items
             string studentName = cmb_Student.SelectedItem.ToString();
             string drinkName = cmb_Drink.SelectedItem.ToString();
-                       
+
             // Give a message that the payment has succeeded
             testLabel.Text = studentName + " Has purchased " + drinkName;
             stockService.SellItem(drinkName);
@@ -324,9 +382,8 @@ namespace SomerenUI
                 {
                     studService.AddPurchase(s.Number);
                 }
-            }   
-           
-        
+            }
+          
         }
 
         //Bring up the panel to change stock
@@ -346,7 +403,7 @@ namespace SomerenUI
             {
                 chk_PriceChange.Checked = false;
             }
-            
+
             DrinkInit();
             pnl_StockChange.Show();
 
@@ -371,6 +428,8 @@ namespace SomerenUI
             pnl_DeleteAttendant.Hide();
             pnl_Schedule.Hide();
             pnl_EditActivities.Hide();
+            pnl_DeleteWaarshuwing.Hide();
+            pnl_AddActivity.Hide();
 
 
             //Hide stuff
@@ -400,7 +459,7 @@ namespace SomerenUI
             {
                 price = double.Parse(txt_StockNewPrice.Text);
             }
-                       
+
             /*
              * Hieronder wordt bepaald welke query er verstuurd wordt.
              * De methode geeft een opdracht aan Stock_Service om een methode uit te voeren 
@@ -463,39 +522,53 @@ namespace SomerenUI
 
         private void btn_AddAttendant_Click(object sender, EventArgs e)
         {
-            pnl_AddAttendant.Show();
+            showPanel("AddAttendants");
         }
 
         private void btn_DeleteAttendant_Click(object sender, EventArgs e)
         {
-            pnl_DeleteAttendant.Show();
+            showPanel("DeleteAttendant");
         }
 
         private void btn_ConfirmAttendant_Click(object sender, EventArgs e)
         {
+            SomerenLogic.Attendant_Service attendantService = new SomerenLogic.Attendant_Service();
+
+            int selectedLecturer = int.Parse(listViewAddAttendant.SelectedItems[0].SubItems[0].Text);
+            attendantService.AddAttendant(selectedLecturer);
+
             pnl_AddAttendant.Hide();
         }
 
         private void btn_CofirmDeleteAttendant_Click(object sender, EventArgs e)
         {
-            pnl_DeleteAttendant.Hide();
+            pnl_DeleteWaarshuwing.Show();
+
         }
 
         private void btn_SwitchActivity_Click(object sender, EventArgs e)
         {
-            string selectedDate = cal_SchedulePicker.SelectionRange.Start.ToString();
-            DateTime selectedDateTime = DateTime.Parse(selectedDate);
             SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
             List<Activity> activityList = activityService.GetActivities();
-            
 
-            if(selectedDateTime.DayOfWeek == DayOfWeek.Monday)
+           
+            string selectedItem = dgv_Schedule.CurrentCell.Value.ToString();
+            Console.WriteLine(selectedItem);
+
+            foreach (Activity a in activityList)
             {
-                activityService.ChangeActivity("tuesday", 1);
-            } 
-            else if(selectedDateTime.DayOfWeek == DayOfWeek.Tuesday)
-            {
-                activityService.ChangeActivity("monday", 1);
+                if(a.Omschijving == selectedItem)
+                {
+                    if(a.Day == "monday")
+                    {
+                        activityService.ChangeActivity("tuesday", selectedItem);
+                        ShowMonday();
+                    } if( a.Day == "tuesday")
+                    {
+                        activityService.ChangeActivity("monday", selectedItem);
+                        ShowTuesday();
+                    }
+                }
             }
         }
 
@@ -504,50 +577,144 @@ namespace SomerenUI
             pnl_EditActivities.Hide();
         }
 
-        private void btn_ScheduleSelectDAy_Click(object sender, EventArgs e)
+            public void ShowMonday()
         {
-            listViewSchedule.Items.Clear();
-            string selectedDate = cal_SchedulePicker.SelectionRange.Start.ToString();
-            DateTime selectedDateTime = DateTime.Parse(selectedDate);
             SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
             List<Activity> activityList = activityService.GetActivities();
 
 
-            if (selectedDateTime.DayOfWeek == DayOfWeek.Monday)
-            {
-                
-                foreach (Activity a in activityList)
-                {
-                    if (a.Day == "monday")
-                    {
-                        ListViewItem li = new ListViewItem();
+            List<Activity> dailyList = activityService.GetDayActivity("monday");
 
-                        li.Text = a.Omschijving;
-                        li.SubItems.Add(a.aantalStudenten.ToString());
-                        li.SubItems.Add(a.aantalBegeleiders.ToString());
-
-                        listViewSchedule.Items.Add(li);
-                    }
-                }
-            } else if(selectedDateTime.DayOfWeek == DayOfWeek.Tuesday)
-            {
-                foreach(Activity a in activityList)
-                {
-                    if (a.Day == "tuesday")
-                    {
-                        ListViewItem li = new ListViewItem();
-
-                        li.Text = a.Omschijving;
-                        li.SubItems.Add(a.aantalStudenten.ToString());
-                        li.SubItems.Add(a.aantalBegeleiders.ToString());
+            dgv_Schedule.DataSource = dailyList;
+            dgv_Schedule.Columns.RemoveAt(0);
+            dgv_Schedule.Columns.RemoveAt(3);
+        }
 
 
-                        listViewSchedule.Items.Add(li);
-                    }
-                }
-            }
+        public void ShowTuesday()
+        {
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+            List<Activity> activityList = activityService.GetActivities();
+
+
+            List<Activity> dailyList = activityService.GetDayActivity("tuesday");
+
+            dgv_Schedule.DataSource = dailyList;
+            dgv_Schedule.Columns.RemoveAt(0);
+            dgv_Schedule.Columns.RemoveAt(3);
+        }
+
+        public void ShowEmptyList()
+        {
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+            List<Activity> emptyList = activityService.EmptyActivity();
+
+            dgv_Schedule.DataSource = emptyList;
+            dgv_Schedule.Columns.RemoveAt(0);
+            dgv_Schedule.Columns.RemoveAt(3);
+        }
+
+
+        private void btnSelectMonday_Click(object sender, EventArgs e)
+        {
+
+            ShowMonday();
+        }
+
+        private void btn_SelectTuesday_Click(object sender, EventArgs e)
+        {
+
+            ShowTuesday();
 
         }
+
+        private void btn_SelectWednesday_Click(object sender, EventArgs e)
+        {
+            ShowEmptyList();
+        }
+
+        private void btn_SelectThursday_Click(object sender, EventArgs e)
+        {
+            ShowEmptyList();
+        }
+
+        private void btn_ScheduleSelectDAy_Click(object sender, EventArgs e)
+        {
+            ShowEmptyList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnl_DeleteAttendant.Hide();
+        }
+
+        private void btn_CloseAddAttendant_Click(object sender, EventArgs e)
+        {
+            pnl_AddAttendant.Hide();
+        }
+
+        private void btn_DeleteNo_Click(object sender, EventArgs e)
+        {
+            pnl_DeleteWaarshuwing.Hide();
+        }
+
+        private void btn_DeleteYes_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Attendant_Service attendantService = new SomerenLogic.Attendant_Service();
+
+            int selectedLecturer = int.Parse(listViewDeleteAttendant.SelectedItems[0].SubItems[0].Text);
+            attendantService.DeleteAttendant(selectedLecturer);
+
+            pnl_DeleteAttendant.Hide();
+            pnl_DeleteWaarshuwing.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddActivity_Click(object sender, EventArgs e)
+        {
+            pnl_AddActivity.Show();
+        }
+        private void btnAddActivityconfirm_Click(object sender, EventArgs e)
+        {
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+
+            int ActivityId = int.Parse(txt_AddActivityId.Text);
+            string ActivityOmschrijving = txt_AddActivityName.Text;
+            int ActivityAantalStudenten = int.Parse(txt_AddActivityaantalstudenten.Text);
+            int ActivityAantalBegeleiders = int.Parse(txt_AddActivityAantalbegeleiders.Text);
+
+            activityService.AddActivity(ActivityId, ActivityOmschrijving, ActivityAantalStudenten, ActivityAantalBegeleiders);
+
+            pnl_AddActivity.Hide();
+            listViewActivities.Refresh();
+            listViewActivities.Items.Clear();
+            ShowActivities();
+        }
+
+        public void ShowActivities()
+        {
+            SomerenLogic.Activity_Service activityService = new SomerenLogic.Activity_Service();
+            List<Activity> activityList = activityService.GetActivities();
+
+            foreach (Activity a in activityList)
+            {
+                ListViewItem li = new ListViewItem();
+
+                li.SubItems.Add(a.Id.ToString());
+                li.Text = a.Omschijving;
+                li.SubItems.Add(a.aantalStudenten.ToString());
+                li.SubItems.Add(a.aantalBegeleiders.ToString());
+
+                listViewActivities.Items.Add(li);
+            }
+        }
+
     }
+
 }
+
 

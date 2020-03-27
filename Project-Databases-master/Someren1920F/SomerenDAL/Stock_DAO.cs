@@ -14,7 +14,7 @@ namespace SomerenDAL
     {
         public List<Stock> Db_Get_All_Stock()
         {
-            string query = "SELECT dranknaam, aantal, prijs, verkocht, verkoopdatum FROM [Voorraad]";
+            string query = "SELECT dranknaam, aantal, prijs, verkocht, verkoopdatum FROM Voorraad";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

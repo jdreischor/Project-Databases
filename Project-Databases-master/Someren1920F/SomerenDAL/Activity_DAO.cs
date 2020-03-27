@@ -39,11 +39,26 @@ namespace SomerenDAL
             return activities;
         }
 
-        public void ChangeDates(string newDate, int activityID)
+        public void ChangeDates(string newDate, string activityName)
         {
-            string query = "UPDATE [Activiteit] SET dag = '" + newDate + "' WHERE id = '" + activityID + "'";
+            string query = "UPDATE [Activiteit] SET dag = '" + newDate + "' WHERE omschrijving = '" + activityName + "'";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             ExecuteEditQuery(query, sqlParameters);
         }
+
+        public List<Activity> DB_Get_Day_Activity(string day)
+        {
+            string query = "SELECT id, omschrijving, aantalStudenten, aantalBegeleiders, dag FROM [Activiteit] WHERE dag = '" + day + "'";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            return ReadTables(ExecuteSelectQuery(query, sqlParameters));
+        }
+
+        public void AddActivity(int Id, string Omschrijving, int AantalStudenten, int AantalBegeleiders)
+        {
+            string query = "INSERT INTO Activiteit(id, omschrijving, aantalStudenten, aantalBegeleiders) VALUES(" + Id + ", '" + Omschrijving + "', " + AantalStudenten + ", " + AantalBegeleiders + ")";
+            SqlParameter[] sqlParameters = new SqlParameter[0];
+            ExecuteEditQuery(query, sqlParameters);
+        }
+
     }
 }

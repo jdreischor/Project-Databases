@@ -85,6 +85,9 @@
             this.txtActivityName = new System.Windows.Forms.TextBox();
             this.btn_EditActivities = new System.Windows.Forms.Button();
             this.listViewActivities = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Students = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -112,25 +115,61 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Rooms = new System.Windows.Forms.Label();
             this.pnl_Attendants = new System.Windows.Forms.Panel();
+            this.pnl_DeleteWaarshuwing = new System.Windows.Forms.Panel();
+            this.btn_DeleteNo = new System.Windows.Forms.Button();
+            this.btn_DeleteYes = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.pnl_DeleteAttendant = new System.Windows.Forms.Panel();
+            this.btn_CloseDeleteAttendant = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_CofirmDeleteAttendant = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewDeleteAttendant = new System.Windows.Forms.ListView();
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_AddAttendant = new System.Windows.Forms.Panel();
-            this.btn_ConfirmAttendant = new System.Windows.Forms.Button();
+            this.btn_CloseAddAttendant = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.listViewAddAttendant = new System.Windows.Forms.ListView();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_ConfirmAttendant = new System.Windows.Forms.Button();
             this.btn_DeleteAttendant = new System.Windows.Forms.Button();
             this.btn_AddAttendant = new System.Windows.Forms.Button();
             this.listViewAttendants = new System.Windows.Forms.ListView();
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Schedule = new System.Windows.Forms.Panel();
+            this.btn_SelectThursday = new System.Windows.Forms.Button();
+            this.btn_SelectWednesday = new System.Windows.Forms.Button();
+            this.btn_SelectTuesday = new System.Windows.Forms.Button();
+            this.btnSelectMonday = new System.Windows.Forms.Button();
+            this.dgv_Schedule = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listViewFriday = new System.Windows.Forms.ListView();
+            this.listViewThursday = new System.Windows.Forms.ListView();
+            this.listViewWednesday = new System.Windows.Forms.ListView();
+            this.lbl_Friday = new System.Windows.Forms.Label();
+            this.lbl_Thursday = new System.Windows.Forms.Label();
+            this.lbl_Wednesday = new System.Windows.Forms.Label();
+            this.lbl_Tuesday = new System.Windows.Forms.Label();
+            this.lbl_Monday = new System.Windows.Forms.Label();
+            this.listViewMonday = new System.Windows.Forms.ListView();
+            this.listViewTuesday = new System.Windows.Forms.ListView();
+            this.btn_SelectFriday = new System.Windows.Forms.Button();
             this.btn_SwitchActivity = new System.Windows.Forms.Button();
-            this.listViewSchedule = new System.Windows.Forms.ListView();
-            this.activityHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.participantsHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.attendantsHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.startTimeHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cal_SchedulePicker = new System.Windows.Forms.MonthCalendar();
-            this.btn_ScheduleSelectDAy = new System.Windows.Forms.Button();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activityBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pnl_AddActivity = new System.Windows.Forms.Panel();
+            this.lbl_AddActivityId = new System.Windows.Forms.Label();
+            this.lbl_AddActivityName = new System.Windows.Forms.Label();
+            this.lbl_AddActivityAantalstudents = new System.Windows.Forms.Label();
+            this.lbl_AddActivityaantalBegeleiders = new System.Windows.Forms.Label();
+            this.txt_AddActivityId = new System.Windows.Forms.TextBox();
+            this.txt_AddActivityName = new System.Windows.Forms.TextBox();
+            this.txt_AddActivityaantalstudenten = new System.Windows.Forms.TextBox();
+            this.txt_AddActivityAantalbegeleiders = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.pnl_Dashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -145,10 +184,15 @@
             this.pnl_Lecturers.SuspendLayout();
             this.panelRooms.SuspendLayout();
             this.pnl_Attendants.SuspendLayout();
+            this.pnl_DeleteWaarshuwing.SuspendLayout();
             this.pnl_DeleteAttendant.SuspendLayout();
             this.pnl_AddAttendant.SuspendLayout();
             this.pnl_Schedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Schedule)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource1)).BeginInit();
+            this.pnl_AddActivity.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -168,7 +212,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1283, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1283, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -550,6 +594,7 @@
             // 
             // pnl_EditActivities
             // 
+            this.pnl_EditActivities.Controls.Add(this.pnl_AddActivity);
             this.pnl_EditActivities.Controls.Add(this.btn_ConfirmEditActivity);
             this.pnl_EditActivities.Controls.Add(this.label6);
             this.pnl_EditActivities.Controls.Add(this.label5);
@@ -635,12 +680,16 @@
             this.btn_EditActivities.Name = "btn_EditActivities";
             this.btn_EditActivities.Size = new System.Drawing.Size(203, 62);
             this.btn_EditActivities.TabIndex = 1;
-            this.btn_EditActivities.Text = "Edit Activities";
+            this.btn_EditActivities.Text = "Add Activities";
             this.btn_EditActivities.UseVisualStyleBackColor = true;
             this.btn_EditActivities.Click += new System.EventHandler(this.btn_EditActivities_Click);
             // 
             // listViewActivities
             // 
+            this.listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13});
             this.listViewActivities.HideSelection = false;
             this.listViewActivities.Location = new System.Drawing.Point(81, 68);
             this.listViewActivities.Margin = new System.Windows.Forms.Padding(4);
@@ -648,6 +697,7 @@
             this.listViewActivities.Size = new System.Drawing.Size(815, 394);
             this.listViewActivities.TabIndex = 0;
             this.listViewActivities.UseCompatibleStateImageBehavior = false;
+            this.listViewActivities.View = System.Windows.Forms.View.Details;
             // 
             // pnl_Students
             // 
@@ -893,6 +943,7 @@
             // 
             // pnl_Attendants
             // 
+            this.pnl_Attendants.Controls.Add(this.pnl_DeleteWaarshuwing);
             this.pnl_Attendants.Controls.Add(this.pnl_DeleteAttendant);
             this.pnl_Attendants.Controls.Add(this.pnl_AddAttendant);
             this.pnl_Attendants.Controls.Add(this.btn_DeleteAttendant);
@@ -904,19 +955,83 @@
             this.pnl_Attendants.Size = new System.Drawing.Size(1145, 530);
             this.pnl_Attendants.TabIndex = 10;
             // 
+            // pnl_DeleteWaarshuwing
+            // 
+            this.pnl_DeleteWaarshuwing.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_DeleteWaarshuwing.Controls.Add(this.btn_DeleteNo);
+            this.pnl_DeleteWaarshuwing.Controls.Add(this.btn_DeleteYes);
+            this.pnl_DeleteWaarshuwing.Controls.Add(this.label10);
+            this.pnl_DeleteWaarshuwing.Location = new System.Drawing.Point(334, 157);
+            this.pnl_DeleteWaarshuwing.Name = "pnl_DeleteWaarshuwing";
+            this.pnl_DeleteWaarshuwing.Size = new System.Drawing.Size(430, 192);
+            this.pnl_DeleteWaarshuwing.TabIndex = 4;
+            // 
+            // btn_DeleteNo
+            // 
+            this.btn_DeleteNo.Location = new System.Drawing.Point(263, 116);
+            this.btn_DeleteNo.Name = "btn_DeleteNo";
+            this.btn_DeleteNo.Size = new System.Drawing.Size(84, 32);
+            this.btn_DeleteNo.TabIndex = 2;
+            this.btn_DeleteNo.Text = "No";
+            this.btn_DeleteNo.UseVisualStyleBackColor = true;
+            this.btn_DeleteNo.Click += new System.EventHandler(this.btn_DeleteNo_Click);
+            // 
+            // btn_DeleteYes
+            // 
+            this.btn_DeleteYes.Location = new System.Drawing.Point(36, 116);
+            this.btn_DeleteYes.Name = "btn_DeleteYes";
+            this.btn_DeleteYes.Size = new System.Drawing.Size(89, 32);
+            this.btn_DeleteYes.TabIndex = 1;
+            this.btn_DeleteYes.Text = "Yes";
+            this.btn_DeleteYes.UseVisualStyleBackColor = true;
+            this.btn_DeleteYes.Click += new System.EventHandler(this.btn_DeleteYes_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(417, 25);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Are you sure you want to delete this attendant?";
+            // 
             // pnl_DeleteAttendant
             // 
+            this.pnl_DeleteAttendant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_DeleteAttendant.Controls.Add(this.btn_CloseDeleteAttendant);
+            this.pnl_DeleteAttendant.Controls.Add(this.label8);
             this.pnl_DeleteAttendant.Controls.Add(this.btn_CofirmDeleteAttendant);
-            this.pnl_DeleteAttendant.Controls.Add(this.listView1);
-            this.pnl_DeleteAttendant.Location = new System.Drawing.Point(61, 12);
+            this.pnl_DeleteAttendant.Controls.Add(this.listViewDeleteAttendant);
+            this.pnl_DeleteAttendant.Location = new System.Drawing.Point(334, 31);
             this.pnl_DeleteAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_DeleteAttendant.Name = "pnl_DeleteAttendant";
-            this.pnl_DeleteAttendant.Size = new System.Drawing.Size(552, 539);
+            this.pnl_DeleteAttendant.Size = new System.Drawing.Size(381, 472);
             this.pnl_DeleteAttendant.TabIndex = 4;
+            // 
+            // btn_CloseDeleteAttendant
+            // 
+            this.btn_CloseDeleteAttendant.Location = new System.Drawing.Point(337, 5);
+            this.btn_CloseDeleteAttendant.Name = "btn_CloseDeleteAttendant";
+            this.btn_CloseDeleteAttendant.Size = new System.Drawing.Size(40, 33);
+            this.btn_CloseDeleteAttendant.TabIndex = 3;
+            this.btn_CloseDeleteAttendant.Text = "X";
+            this.btn_CloseDeleteAttendant.UseVisualStyleBackColor = true;
+            this.btn_CloseDeleteAttendant.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(87, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(209, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Choose attendant to delete";
             // 
             // btn_CofirmDeleteAttendant
             // 
-            this.btn_CofirmDeleteAttendant.Location = new System.Drawing.Point(361, 410);
+            this.btn_CofirmDeleteAttendant.Location = new System.Drawing.Point(119, 415);
             this.btn_CofirmDeleteAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_CofirmDeleteAttendant.Name = "btn_CofirmDeleteAttendant";
             this.btn_CofirmDeleteAttendant.Size = new System.Drawing.Size(161, 47);
@@ -925,29 +1040,91 @@
             this.btn_CofirmDeleteAttendant.UseVisualStyleBackColor = true;
             this.btn_CofirmDeleteAttendant.Click += new System.EventHandler(this.btn_CofirmDeleteAttendant_Click);
             // 
-            // listView1
+            // listViewDeleteAttendant
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 11);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(348, 474);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewDeleteAttendant.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader14,
+            this.columnHeader15});
+            this.listViewDeleteAttendant.HideSelection = false;
+            this.listViewDeleteAttendant.Location = new System.Drawing.Point(17, 51);
+            this.listViewDeleteAttendant.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewDeleteAttendant.Name = "listViewDeleteAttendant";
+            this.listViewDeleteAttendant.Size = new System.Drawing.Size(348, 356);
+            this.listViewDeleteAttendant.TabIndex = 0;
+            this.listViewDeleteAttendant.UseCompatibleStateImageBehavior = false;
+            this.listViewDeleteAttendant.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "LecturerID";
+            this.columnHeader14.Width = 108;
+            // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Name";
+            this.columnHeader15.Width = 124;
             // 
             // pnl_AddAttendant
             // 
-            this.pnl_AddAttendant.Controls.Add(this.btn_ConfirmAttendant);
+            this.pnl_AddAttendant.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_AddAttendant.Controls.Add(this.btn_CloseAddAttendant);
+            this.pnl_AddAttendant.Controls.Add(this.label9);
             this.pnl_AddAttendant.Controls.Add(this.listViewAddAttendant);
-            this.pnl_AddAttendant.Location = new System.Drawing.Point(155, 4);
+            this.pnl_AddAttendant.Controls.Add(this.btn_ConfirmAttendant);
+            this.pnl_AddAttendant.Location = new System.Drawing.Point(339, 31);
             this.pnl_AddAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_AddAttendant.Name = "pnl_AddAttendant";
-            this.pnl_AddAttendant.Size = new System.Drawing.Size(643, 508);
+            this.pnl_AddAttendant.Size = new System.Drawing.Size(395, 468);
             this.pnl_AddAttendant.TabIndex = 3;
+            // 
+            // btn_CloseAddAttendant
+            // 
+            this.btn_CloseAddAttendant.Location = new System.Drawing.Point(345, 5);
+            this.btn_CloseAddAttendant.Name = "btn_CloseAddAttendant";
+            this.btn_CloseAddAttendant.Size = new System.Drawing.Size(47, 38);
+            this.btn_CloseAddAttendant.TabIndex = 3;
+            this.btn_CloseAddAttendant.Text = "X";
+            this.btn_CloseAddAttendant.UseVisualStyleBackColor = true;
+            this.btn_CloseAddAttendant.Click += new System.EventHandler(this.btn_CloseAddAttendant_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 13);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(266, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Choose lecturer to make attendant";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // listViewAddAttendant
+            // 
+            this.listViewAddAttendant.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader16,
+            this.columnHeader17});
+            this.listViewAddAttendant.HideSelection = false;
+            this.listViewAddAttendant.Location = new System.Drawing.Point(24, 60);
+            this.listViewAddAttendant.Margin = new System.Windows.Forms.Padding(4);
+            this.listViewAddAttendant.Name = "listViewAddAttendant";
+            this.listViewAddAttendant.Size = new System.Drawing.Size(333, 322);
+            this.listViewAddAttendant.TabIndex = 0;
+            this.listViewAddAttendant.UseCompatibleStateImageBehavior = false;
+            this.listViewAddAttendant.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader16
+            // 
+            this.columnHeader16.Text = "LecturerID";
+            this.columnHeader16.Width = 106;
+            // 
+            // columnHeader17
+            // 
+            this.columnHeader17.Text = "Name";
+            this.columnHeader17.Width = 74;
             // 
             // btn_ConfirmAttendant
             // 
-            this.btn_ConfirmAttendant.Location = new System.Drawing.Point(423, 391);
+            this.btn_ConfirmAttendant.Location = new System.Drawing.Point(92, 404);
             this.btn_ConfirmAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ConfirmAttendant.Name = "btn_ConfirmAttendant";
             this.btn_ConfirmAttendant.Size = new System.Drawing.Size(189, 41);
@@ -956,22 +1133,13 @@
             this.btn_ConfirmAttendant.UseVisualStyleBackColor = true;
             this.btn_ConfirmAttendant.Click += new System.EventHandler(this.btn_ConfirmAttendant_Click);
             // 
-            // listViewAddAttendant
-            // 
-            this.listViewAddAttendant.HideSelection = false;
-            this.listViewAddAttendant.Location = new System.Drawing.Point(24, 28);
-            this.listViewAddAttendant.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewAddAttendant.Name = "listViewAddAttendant";
-            this.listViewAddAttendant.Size = new System.Drawing.Size(389, 469);
-            this.listViewAddAttendant.TabIndex = 0;
-            this.listViewAddAttendant.UseCompatibleStateImageBehavior = false;
-            // 
             // btn_DeleteAttendant
             // 
+            this.btn_DeleteAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteAttendant.Location = new System.Drawing.Point(940, 268);
             this.btn_DeleteAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DeleteAttendant.Name = "btn_DeleteAttendant";
-            this.btn_DeleteAttendant.Size = new System.Drawing.Size(189, 28);
+            this.btn_DeleteAttendant.Size = new System.Drawing.Size(189, 64);
             this.btn_DeleteAttendant.TabIndex = 2;
             this.btn_DeleteAttendant.Text = "Delete Attendant";
             this.btn_DeleteAttendant.UseVisualStyleBackColor = true;
@@ -979,10 +1147,11 @@
             // 
             // btn_AddAttendant
             // 
-            this.btn_AddAttendant.Location = new System.Drawing.Point(940, 187);
+            this.btn_AddAttendant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddAttendant.Location = new System.Drawing.Point(940, 152);
             this.btn_AddAttendant.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AddAttendant.Name = "btn_AddAttendant";
-            this.btn_AddAttendant.Size = new System.Drawing.Size(189, 28);
+            this.btn_AddAttendant.Size = new System.Drawing.Size(189, 63);
             this.btn_AddAttendant.TabIndex = 1;
             this.btn_AddAttendant.Text = "Add Attendant";
             this.btn_AddAttendant.UseVisualStyleBackColor = true;
@@ -990,6 +1159,9 @@
             // 
             // listViewAttendants
             // 
+            this.listViewAttendants.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader18,
+            this.columnHeader19});
             this.listViewAttendants.HideSelection = false;
             this.listViewAttendants.Location = new System.Drawing.Point(121, 60);
             this.listViewAttendants.Margin = new System.Windows.Forms.Padding(4);
@@ -997,88 +1169,358 @@
             this.listViewAttendants.Size = new System.Drawing.Size(795, 393);
             this.listViewAttendants.TabIndex = 0;
             this.listViewAttendants.UseCompatibleStateImageBehavior = false;
+            this.listViewAttendants.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader18
+            // 
+            this.columnHeader18.Text = "Lecturer ID";
+            this.columnHeader18.Width = 112;
+            // 
+            // columnHeader19
+            // 
+            this.columnHeader19.Text = "Name";
+            this.columnHeader19.Width = 128;
             // 
             // pnl_Schedule
             // 
-            this.pnl_Schedule.Controls.Add(this.btn_ScheduleSelectDAy);
-            this.pnl_Schedule.Controls.Add(this.cal_SchedulePicker);
+            this.pnl_Schedule.AutoSize = true;
+            this.pnl_Schedule.Controls.Add(this.btn_SelectThursday);
+            this.pnl_Schedule.Controls.Add(this.btn_SelectWednesday);
+            this.pnl_Schedule.Controls.Add(this.btn_SelectTuesday);
+            this.pnl_Schedule.Controls.Add(this.btnSelectMonday);
+            this.pnl_Schedule.Controls.Add(this.dgv_Schedule);
+            this.pnl_Schedule.Controls.Add(this.tableLayoutPanel1);
+            this.pnl_Schedule.Controls.Add(this.btn_SelectFriday);
             this.pnl_Schedule.Controls.Add(this.btn_SwitchActivity);
-            this.pnl_Schedule.Controls.Add(this.listViewSchedule);
             this.pnl_Schedule.Location = new System.Drawing.Point(0, 0);
             this.pnl_Schedule.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Schedule.Name = "pnl_Schedule";
             this.pnl_Schedule.Size = new System.Drawing.Size(1227, 562);
             this.pnl_Schedule.TabIndex = 11;
             // 
+            // btn_SelectThursday
+            // 
+            this.btn_SelectThursday.Location = new System.Drawing.Point(977, 273);
+            this.btn_SelectThursday.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SelectThursday.Name = "btn_SelectThursday";
+            this.btn_SelectThursday.Size = new System.Drawing.Size(216, 65);
+            this.btn_SelectThursday.TabIndex = 14;
+            this.btn_SelectThursday.Text = "Thursday";
+            this.btn_SelectThursday.UseVisualStyleBackColor = true;
+            this.btn_SelectThursday.Click += new System.EventHandler(this.btn_SelectThursday_Click);
+            // 
+            // btn_SelectWednesday
+            // 
+            this.btn_SelectWednesday.Location = new System.Drawing.Point(977, 200);
+            this.btn_SelectWednesday.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SelectWednesday.Name = "btn_SelectWednesday";
+            this.btn_SelectWednesday.Size = new System.Drawing.Size(216, 65);
+            this.btn_SelectWednesday.TabIndex = 13;
+            this.btn_SelectWednesday.Text = "Wednesday";
+            this.btn_SelectWednesday.UseVisualStyleBackColor = true;
+            this.btn_SelectWednesday.Click += new System.EventHandler(this.btn_SelectWednesday_Click);
+            // 
+            // btn_SelectTuesday
+            // 
+            this.btn_SelectTuesday.Location = new System.Drawing.Point(977, 126);
+            this.btn_SelectTuesday.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SelectTuesday.Name = "btn_SelectTuesday";
+            this.btn_SelectTuesday.Size = new System.Drawing.Size(216, 65);
+            this.btn_SelectTuesday.TabIndex = 12;
+            this.btn_SelectTuesday.Text = "Tuesday";
+            this.btn_SelectTuesday.UseVisualStyleBackColor = true;
+            this.btn_SelectTuesday.Click += new System.EventHandler(this.btn_SelectTuesday_Click);
+            // 
+            // btnSelectMonday
+            // 
+            this.btnSelectMonday.Location = new System.Drawing.Point(977, 48);
+            this.btnSelectMonday.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelectMonday.Name = "btnSelectMonday";
+            this.btnSelectMonday.Size = new System.Drawing.Size(216, 65);
+            this.btnSelectMonday.TabIndex = 11;
+            this.btnSelectMonday.Text = "Monday";
+            this.btnSelectMonday.UseVisualStyleBackColor = true;
+            this.btnSelectMonday.Click += new System.EventHandler(this.btnSelectMonday_Click);
+            // 
+            // dgv_Schedule
+            // 
+            this.dgv_Schedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Schedule.Location = new System.Drawing.Point(10, 23);
+            this.dgv_Schedule.MultiSelect = false;
+            this.dgv_Schedule.Name = "dgv_Schedule";
+            this.dgv_Schedule.RowHeadersVisible = false;
+            this.dgv_Schedule.RowHeadersWidth = 51;
+            this.dgv_Schedule.RowTemplate.Height = 24;
+            this.dgv_Schedule.Size = new System.Drawing.Size(936, 528);
+            this.dgv_Schedule.TabIndex = 10;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.listViewFriday, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.listViewThursday, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.listViewWednesday, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_Friday, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_Thursday, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_Wednesday, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_Tuesday, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_Monday, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listViewMonday, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.listViewTuesday, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 36);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 507);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(185, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "label7";
+            // 
+            // listViewFriday
+            // 
+            this.listViewFriday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewFriday.HideSelection = false;
+            this.listViewFriday.Location = new System.Drawing.Point(731, 76);
+            this.listViewFriday.Name = "listViewFriday";
+            this.listViewFriday.Size = new System.Drawing.Size(178, 407);
+            this.listViewFriday.TabIndex = 9;
+            this.listViewFriday.UseCompatibleStateImageBehavior = false;
+            // 
+            // listViewThursday
+            // 
+            this.listViewThursday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewThursday.HideSelection = false;
+            this.listViewThursday.Location = new System.Drawing.Point(549, 76);
+            this.listViewThursday.Name = "listViewThursday";
+            this.listViewThursday.Size = new System.Drawing.Size(176, 407);
+            this.listViewThursday.TabIndex = 8;
+            this.listViewThursday.UseCompatibleStateImageBehavior = false;
+            // 
+            // listViewWednesday
+            // 
+            this.listViewWednesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewWednesday.HideSelection = false;
+            this.listViewWednesday.Location = new System.Drawing.Point(367, 76);
+            this.listViewWednesday.Name = "listViewWednesday";
+            this.listViewWednesday.Size = new System.Drawing.Size(176, 407);
+            this.listViewWednesday.TabIndex = 7;
+            this.listViewWednesday.UseCompatibleStateImageBehavior = false;
+            // 
+            // lbl_Friday
+            // 
+            this.lbl_Friday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Friday.AutoSize = true;
+            this.lbl_Friday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Friday.Location = new System.Drawing.Point(731, 24);
+            this.lbl_Friday.Name = "lbl_Friday";
+            this.lbl_Friday.Size = new System.Drawing.Size(178, 25);
+            this.lbl_Friday.TabIndex = 4;
+            this.lbl_Friday.Text = "Friday";
+            this.lbl_Friday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Thursday
+            // 
+            this.lbl_Thursday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Thursday.AutoSize = true;
+            this.lbl_Thursday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Thursday.Location = new System.Drawing.Point(549, 24);
+            this.lbl_Thursday.Name = "lbl_Thursday";
+            this.lbl_Thursday.Size = new System.Drawing.Size(176, 25);
+            this.lbl_Thursday.TabIndex = 3;
+            this.lbl_Thursday.Text = "Thursday";
+            // 
+            // lbl_Wednesday
+            // 
+            this.lbl_Wednesday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Wednesday.AutoSize = true;
+            this.lbl_Wednesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Wednesday.Location = new System.Drawing.Point(367, 24);
+            this.lbl_Wednesday.Name = "lbl_Wednesday";
+            this.lbl_Wednesday.Size = new System.Drawing.Size(176, 25);
+            this.lbl_Wednesday.TabIndex = 2;
+            this.lbl_Wednesday.Text = "Wednesday";
+            this.lbl_Wednesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Tuesday
+            // 
+            this.lbl_Tuesday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Tuesday.AutoSize = true;
+            this.lbl_Tuesday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Tuesday.Location = new System.Drawing.Point(185, 24);
+            this.lbl_Tuesday.Name = "lbl_Tuesday";
+            this.lbl_Tuesday.Size = new System.Drawing.Size(176, 25);
+            this.lbl_Tuesday.TabIndex = 1;
+            this.lbl_Tuesday.Text = "Tuesday";
+            this.lbl_Tuesday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Monday
+            // 
+            this.lbl_Monday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_Monday.AutoSize = true;
+            this.lbl_Monday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Monday.Location = new System.Drawing.Point(3, 24);
+            this.lbl_Monday.Name = "lbl_Monday";
+            this.lbl_Monday.Size = new System.Drawing.Size(176, 25);
+            this.lbl_Monday.TabIndex = 0;
+            this.lbl_Monday.Text = "Monday";
+            this.lbl_Monday.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // listViewMonday
+            // 
+            this.listViewMonday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewMonday.HideSelection = false;
+            this.listViewMonday.Location = new System.Drawing.Point(3, 76);
+            this.listViewMonday.MultiSelect = false;
+            this.listViewMonday.Name = "listViewMonday";
+            this.listViewMonday.Size = new System.Drawing.Size(176, 407);
+            this.listViewMonday.TabIndex = 5;
+            this.listViewMonday.UseCompatibleStateImageBehavior = false;
+            this.listViewMonday.View = System.Windows.Forms.View.Details;
+            // 
+            // listViewTuesday
+            // 
+            this.listViewTuesday.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewTuesday.HideSelection = false;
+            this.listViewTuesday.Location = new System.Drawing.Point(3, 489);
+            this.listViewTuesday.Name = "listViewTuesday";
+            this.listViewTuesday.Size = new System.Drawing.Size(176, 15);
+            this.listViewTuesday.TabIndex = 6;
+            this.listViewTuesday.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_SelectFriday
+            // 
+            this.btn_SelectFriday.Location = new System.Drawing.Point(977, 355);
+            this.btn_SelectFriday.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SelectFriday.Name = "btn_SelectFriday";
+            this.btn_SelectFriday.Size = new System.Drawing.Size(216, 65);
+            this.btn_SelectFriday.TabIndex = 3;
+            this.btn_SelectFriday.Text = "Friday";
+            this.btn_SelectFriday.UseVisualStyleBackColor = true;
+            this.btn_SelectFriday.Click += new System.EventHandler(this.btn_ScheduleSelectDAy_Click);
+            // 
             // btn_SwitchActivity
             // 
-            this.btn_SwitchActivity.Location = new System.Drawing.Point(968, 450);
+            this.btn_SwitchActivity.Location = new System.Drawing.Point(977, 459);
             this.btn_SwitchActivity.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SwitchActivity.Name = "btn_SwitchActivity";
-            this.btn_SwitchActivity.Size = new System.Drawing.Size(205, 57);
+            this.btn_SwitchActivity.Size = new System.Drawing.Size(232, 84);
             this.btn_SwitchActivity.TabIndex = 1;
             this.btn_SwitchActivity.Text = "Switch Activity";
             this.btn_SwitchActivity.UseVisualStyleBackColor = true;
             this.btn_SwitchActivity.Click += new System.EventHandler(this.btn_SwitchActivity_Click);
             // 
-            // listViewSchedule
-            // 
-            this.listViewSchedule.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.activityHeader,
-            this.participantsHeader,
-            this.attendantsHeader,
-            this.startTimeHeader});
-            this.listViewSchedule.HideSelection = false;
-            this.listViewSchedule.Location = new System.Drawing.Point(19, 54);
-            this.listViewSchedule.Margin = new System.Windows.Forms.Padding(4);
-            this.listViewSchedule.Name = "listViewSchedule";
-            this.listViewSchedule.Size = new System.Drawing.Size(900, 449);
-            this.listViewSchedule.TabIndex = 0;
-            this.listViewSchedule.UseCompatibleStateImageBehavior = false;
-            this.listViewSchedule.View = System.Windows.Forms.View.Details;
-            // 
-            // activityHeader
-            // 
-            this.activityHeader.Text = "Activity";
-            this.activityHeader.Width = 120;
-            // 
-            // participantsHeader
-            // 
-            this.participantsHeader.Text = "Participants";
-            this.participantsHeader.Width = 120;
-            // 
-            // attendantsHeader
-            // 
-            this.attendantsHeader.Text = "Attendants:";
-            this.attendantsHeader.Width = 120;
-            // 
-            // startTimeHeader
-            // 
-            this.startTimeHeader.Text = "Start Time";
-            this.startTimeHeader.Width = 120;
-            // 
-            // cal_SchedulePicker
-            // 
-            this.cal_SchedulePicker.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.cal_SchedulePicker.Location = new System.Drawing.Point(940, 92);
-            this.cal_SchedulePicker.MaxSelectionCount = 1;
-            this.cal_SchedulePicker.Name = "cal_SchedulePicker";
-            this.cal_SchedulePicker.TabIndex = 2;
-            // 
-            // btn_ScheduleSelectDAy
-            // 
-            this.btn_ScheduleSelectDAy.Location = new System.Drawing.Point(968, 312);
-            this.btn_ScheduleSelectDAy.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ScheduleSelectDAy.Name = "btn_ScheduleSelectDAy";
-            this.btn_ScheduleSelectDAy.Size = new System.Drawing.Size(216, 65);
-            this.btn_ScheduleSelectDAy.TabIndex = 3;
-            this.btn_ScheduleSelectDAy.Text = "Select Day";
-            this.btn_ScheduleSelectDAy.UseVisualStyleBackColor = true;
-            this.btn_ScheduleSelectDAy.Click += new System.EventHandler(this.btn_ScheduleSelectDAy_Click);
-            // 
             // activityBindingSource
             // 
             this.activityBindingSource.DataSource = typeof(SomerenModel.Activity);
+            // 
+            // activityBindingSource1
+            // 
+            this.activityBindingSource1.DataSource = typeof(SomerenModel.Activity);
+            // 
+            // pnl_AddActivity
+            // 
+            this.pnl_AddActivity.Controls.Add(this.button1);
+            this.pnl_AddActivity.Controls.Add(this.txt_AddActivityAantalbegeleiders);
+            this.pnl_AddActivity.Controls.Add(this.txt_AddActivityaantalstudenten);
+            this.pnl_AddActivity.Controls.Add(this.txt_AddActivityName);
+            this.pnl_AddActivity.Controls.Add(this.txt_AddActivityId);
+            this.pnl_AddActivity.Controls.Add(this.lbl_AddActivityaantalBegeleiders);
+            this.pnl_AddActivity.Controls.Add(this.lbl_AddActivityAantalstudents);
+            this.pnl_AddActivity.Controls.Add(this.lbl_AddActivityName);
+            this.pnl_AddActivity.Controls.Add(this.lbl_AddActivityId);
+            this.pnl_AddActivity.Location = new System.Drawing.Point(0, 0);
+            this.pnl_AddActivity.Name = "pnl_AddActivity";
+            this.pnl_AddActivity.Size = new System.Drawing.Size(1283, 596);
+            this.pnl_AddActivity.TabIndex = 5;
+            // 
+            // lbl_AddActivityId
+            // 
+            this.lbl_AddActivityId.AutoSize = true;
+            this.lbl_AddActivityId.Location = new System.Drawing.Point(78, 130);
+            this.lbl_AddActivityId.Name = "lbl_AddActivityId";
+            this.lbl_AddActivityId.Size = new System.Drawing.Size(23, 17);
+            this.lbl_AddActivityId.TabIndex = 0;
+            this.lbl_AddActivityId.Text = "Id:";
+            // 
+            // lbl_AddActivityName
+            // 
+            this.lbl_AddActivityName.AutoSize = true;
+            this.lbl_AddActivityName.Location = new System.Drawing.Point(78, 186);
+            this.lbl_AddActivityName.Name = "lbl_AddActivityName";
+            this.lbl_AddActivityName.Size = new System.Drawing.Size(45, 17);
+            this.lbl_AddActivityName.TabIndex = 1;
+            this.lbl_AddActivityName.Text = "Name";
+            // 
+            // lbl_AddActivityAantalstudents
+            // 
+            this.lbl_AddActivityAantalstudents.AutoSize = true;
+            this.lbl_AddActivityAantalstudents.Location = new System.Drawing.Point(78, 243);
+            this.lbl_AddActivityAantalstudents.Name = "lbl_AddActivityAantalstudents";
+            this.lbl_AddActivityAantalstudents.Size = new System.Drawing.Size(120, 17);
+            this.lbl_AddActivityAantalstudents.TabIndex = 2;
+            this.lbl_AddActivityAantalstudents.Text = "AmoundStudents:";
+            // 
+            // lbl_AddActivityaantalBegeleiders
+            // 
+            this.lbl_AddActivityaantalBegeleiders.AutoSize = true;
+            this.lbl_AddActivityaantalBegeleiders.Location = new System.Drawing.Point(78, 304);
+            this.lbl_AddActivityaantalBegeleiders.Name = "lbl_AddActivityaantalBegeleiders";
+            this.lbl_AddActivityaantalBegeleiders.Size = new System.Drawing.Size(120, 17);
+            this.lbl_AddActivityaantalBegeleiders.TabIndex = 3;
+            this.lbl_AddActivityaantalBegeleiders.Text = "AmountAttandens";
+            // 
+            // txt_AddActivityId
+            // 
+            this.txt_AddActivityId.Location = new System.Drawing.Point(245, 127);
+            this.txt_AddActivityId.Multiline = true;
+            this.txt_AddActivityId.Name = "txt_AddActivityId";
+            this.txt_AddActivityId.Size = new System.Drawing.Size(100, 22);
+            this.txt_AddActivityId.TabIndex = 4;
+            // 
+            // txt_AddActivityName
+            // 
+            this.txt_AddActivityName.Location = new System.Drawing.Point(245, 185);
+            this.txt_AddActivityName.Name = "txt_AddActivityName";
+            this.txt_AddActivityName.Size = new System.Drawing.Size(100, 22);
+            this.txt_AddActivityName.TabIndex = 5;
+            // 
+            // txt_AddActivityaantalstudenten
+            // 
+            this.txt_AddActivityaantalstudenten.Location = new System.Drawing.Point(245, 246);
+            this.txt_AddActivityaantalstudenten.Name = "txt_AddActivityaantalstudenten";
+            this.txt_AddActivityaantalstudenten.Size = new System.Drawing.Size(100, 22);
+            this.txt_AddActivityaantalstudenten.TabIndex = 6;
+            // 
+            // txt_AddActivityAantalbegeleiders
+            // 
+            this.txt_AddActivityAantalbegeleiders.Location = new System.Drawing.Point(245, 304);
+            this.txt_AddActivityAantalbegeleiders.Name = "txt_AddActivityAantalbegeleiders";
+            this.txt_AddActivityAantalbegeleiders.Size = new System.Drawing.Size(100, 22);
+            this.txt_AddActivityAantalbegeleiders.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(741, 295);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(254, 70);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // SomerenUI
             // 
@@ -1086,8 +1528,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 622);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.pnl_Attendants);
+            this.Controls.Add(this.pnl_Schedule);
             this.Controls.Add(this.pnl_Activities);
             this.Controls.Add(this.pnl_Analysis);
             this.Controls.Add(this.pnl_Stock);
@@ -1126,10 +1568,20 @@
             this.panelRooms.ResumeLayout(false);
             this.panelRooms.PerformLayout();
             this.pnl_Attendants.ResumeLayout(false);
+            this.pnl_DeleteWaarshuwing.ResumeLayout(false);
+            this.pnl_DeleteWaarshuwing.PerformLayout();
             this.pnl_DeleteAttendant.ResumeLayout(false);
+            this.pnl_DeleteAttendant.PerformLayout();
             this.pnl_AddAttendant.ResumeLayout(false);
+            this.pnl_AddAttendant.PerformLayout();
             this.pnl_Schedule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Schedule)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource1)).EndInit();
+            this.pnl_AddActivity.ResumeLayout(false);
+            this.pnl_AddActivity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1219,9 +1671,8 @@
         private System.Windows.Forms.ListView listViewAddAttendant;
         private System.Windows.Forms.Panel pnl_DeleteAttendant;
         private System.Windows.Forms.Button btn_CofirmDeleteAttendant;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewDeleteAttendant;
         private System.Windows.Forms.Panel pnl_Schedule;
-        private System.Windows.Forms.ListView listViewSchedule;
         private System.Windows.Forms.Button btn_SwitchActivity;
         private System.Windows.Forms.Panel pnl_EditActivities;
         private System.Windows.Forms.Button btn_ConfirmEditActivity;
@@ -1231,13 +1682,53 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_EditActivityName;
         private System.Windows.Forms.TextBox txtActivityName;
-        private System.Windows.Forms.ColumnHeader activityHeader;
-        private System.Windows.Forms.ColumnHeader participantsHeader;
-        private System.Windows.Forms.ColumnHeader attendantsHeader;
-        private System.Windows.Forms.ColumnHeader startTimeHeader;
-        private System.Windows.Forms.Button btn_ScheduleSelectDAy;
-        private System.Windows.Forms.MonthCalendar cal_SchedulePicker;
         private System.Windows.Forms.BindingSource activityBindingSource;
+        private System.Windows.Forms.BindingSource activityBindingSource1;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListView listViewFriday;
+        private System.Windows.Forms.ListView listViewThursday;
+        private System.Windows.Forms.ListView listViewWednesday;
+        private System.Windows.Forms.ListView listViewTuesday;
+        private System.Windows.Forms.Label lbl_Friday;
+        private System.Windows.Forms.Label lbl_Thursday;
+        private System.Windows.Forms.Label lbl_Wednesday;
+        private System.Windows.Forms.Label lbl_Tuesday;
+        private System.Windows.Forms.Label lbl_Monday;
+        private System.Windows.Forms.ListView listViewMonday;
+        private System.Windows.Forms.Button btn_SelectFriday;
+        private System.Windows.Forms.DataGridView dgv_Schedule;
+        private System.Windows.Forms.Button btn_SelectThursday;
+        private System.Windows.Forms.Button btn_SelectWednesday;
+        private System.Windows.Forms.Button btn_SelectTuesday;
+        private System.Windows.Forms.Button btnSelectMonday;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_CloseDeleteAttendant;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.Button btn_CloseAddAttendant;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.Panel pnl_DeleteWaarshuwing;
+        private System.Windows.Forms.Button btn_DeleteNo;
+        private System.Windows.Forms.Button btn_DeleteYes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
+        private System.Windows.Forms.ColumnHeader columnHeader19;
+        private System.Windows.Forms.Panel pnl_AddActivity;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_AddActivityAantalbegeleiders;
+        private System.Windows.Forms.TextBox txt_AddActivityaantalstudenten;
+        private System.Windows.Forms.TextBox txt_AddActivityName;
+        private System.Windows.Forms.TextBox txt_AddActivityId;
+        private System.Windows.Forms.Label lbl_AddActivityaantalBegeleiders;
+        private System.Windows.Forms.Label lbl_AddActivityAantalstudents;
+        private System.Windows.Forms.Label lbl_AddActivityName;
+        private System.Windows.Forms.Label lbl_AddActivityId;
     }
 }
 
